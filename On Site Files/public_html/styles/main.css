@@ -267,6 +267,26 @@ br.sm-only-break
   display: none;
 }
 
+.downloadIcon
+{
+  color: #171b41;
+}
+
+div.downloadIcons
+{
+  text-align: center;
+}
+
+.fa-border
+{
+  border-color: #171b41;
+  border-width: 2px;
+}
+
+.downloadIcon:hover
+{
+  color: #669df0;
+}
 
 
 
