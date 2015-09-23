@@ -152,6 +152,11 @@ a:link, a:visited, a:hover, a:active
   opacity: 1;
 }
 
+.description-sm > span.sub-heading
+{
+  font-size: 1.0em;
+}
+
 .container-sm
 {
   width: 680px;
