@@ -9,6 +9,12 @@ html, body
   background-repeat: repeat-y repeat-x;
 }
 
+iframe
+{
+  width: 680px;
+  height: 382px;
+}
+
 .project-wrapper-sm
 {
   display: none;
@@ -491,6 +497,11 @@ div.downloadIcons
     top: 2px;
   }
 
+  iframe
+  {
+    width: 440px;
+    height: 236px;
+  }
 }
 
 @media (max-width: 500px)
@@ -551,6 +562,12 @@ div.downloadIcons
   {
     width: 100%;
     right: 0px;
+  }
+
+  iframe
+  {
+    width: 320px;
+    height: 180px;
   }
 
 }
