@@ -218,6 +218,13 @@ a:link, a:visited, a:hover, a:active
   opacity: 1;
 }
 
+.container-sm .sub-heading
+{
+  color: #171b41;
+  font-size: 1.2em;
+  opacity: 1;
+}
+
 .container-sm .app-icon
 {
   width: 300px;
