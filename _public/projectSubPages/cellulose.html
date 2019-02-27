@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rayner Tan</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <link rel="stylesheet" href="../styles/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+
+  <div class="content-wrapper">
+    <div class="header">
+      <div class="container">
+        <span class="navtext">RAYNER TAN</span>
+
+        <ul class="navitems navtext">
+          <li><a href="../allProjects.html" id="highlighted">WORK</a></li>
+          <li><a href="../about.html">ABOUT</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="container-sm">
+
+      <span class="heading">Cellulose</span>
+
+      <img src="../assets/images/cellulose.png" class="app-icon">
+
+      <img src="../assets/gifs/cellulose_1.gif" alt="" class="gif-portrait">
+      <br class="sm-only-break">
+      <img src="../assets/gifs/cellulose_2.gif" alt="" class="gif-portrait">
+      <br class="sm-only-break">
+      <img src="../assets/gifs/cellulose_3.gif" alt="" class="gif-portrait">
+      <br class="sm-only-break">
+
+      <br>
+
+      <p style="text-align:center">Cellulose is a finalist in the <a href="http://www.sitfawards.com/">SiTF Awards</a> 2016
+      <br>
+      <strong>And won the Special Mention Award.</strong>
+      <br>
+      I was also awarded the Best Presenter Award</p>
+
+      <p>Cellulose is a mobile fast-paced RTS game. Players play the role of a commanding immune system cell, controling groups of child cells to chase after invading viruses.</p>
+
+      <p>Cellulose started off as a school project in a group of four. Since then, we have continued working on this post submission. I was responsible for the player child cell AI, that uses an object pool containing 100 instances of flocking-enabled finite state machines. I also programmed all player controls, user interface, main menu, gameplay logic, and level structure. For the level structure, I used a system of Scriptable Objects to store level specific information.</p>
+
+      <p>The game can run on medium to high end mobile devices and maintain a steady 60fps / 30fps (iOS) with reasonable battery consumption. This was achieved on top of having up to 250 cells physically and logically interacting with each other. Throughout development, we focused on performance and constantly profiled, checking for any inefficiencies that we could optimise.</p>
+
+      <p>The game has been released on the iOS App Store and Google Play Store. Click the respective buttons below to download from the respective stores.</p>
+
+      <p>You can find the source of the project on our GitHub repository here: <a href="https://github.com/raynertanxw/GDP_Cellulose">https://github.com/raynertanxw/GDP_Cellulose</a> You can also download a Windows port (as our game is single-touch, mouse controls work nicely) by clicking the Windows icon below.</p>
+
+
+      <img src="../assets/screenshots/cellulose_1.png" alt="" class="screenshot-portrait">
+      <br class="sm-only-break">
+      <img src="../assets/screenshots/cellulose_2.png" alt="" class="screenshot-portrait">
+      <br class="sm-only-break">
+      <img src="../assets/screenshots/cellulose_3.png" alt="" class="screenshot-portrait">
+      <br class="sm-only-break">
+
+
+      <br>
+
+      <div class="downloadIcons">
+
+        <a href="https://play.google.com/store/apps/details?id=com.tanxuewenrayner.Cellulose" class="downloadIcon">
+          <i class="fa fa-android fa-3x fa-border"></i>
+        </a>
+
+        <a href="https://itunes.apple.com/us/app/cellulose-pursuit/id1132839388?ls=1&mt=8" class="downloadIcon">
+          <i class="fa fa-apple fa-3x fa-border"></i>
+        </a>
+
+        <a href="../downloads/cellulose/submissionBuilds/GDP_Cellulose_WindowsPort.zip" class="downloadIcon">
+          <i class="fa fa-windows fa-3x fa-border"></i>
+        </a>
+      </div>
+
+      <br>
+      <br>
+
+      <div id="moreProjectsButton"></div>
+
+    </div>
+
+    <div class="footer"></div>
+
+  </div>
+  </body>
+
+    <!--JQuery-->
+    <script type="text/javascript" src="../scripts/jquery.min.js"></script>
+    <script>
+        $("#moreProjectsButton").load("COMMON_moreProjectsButton.html");
+    </script>
+
+    <!--Custom JS-->
+    <script type="text/javascript" src="../scripts/main.js"></script>
+
+</html>

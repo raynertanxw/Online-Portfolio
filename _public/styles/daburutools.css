@@ -1,0 +1,106 @@
+/*.container-sm .button span
+{
+  color: #ffffff;
+  position: relative;
+  top: 2px;
+}*/
+
+/*.downloadIcon
+{
+  color: #171b41;
+}
+
+div.downloadIcons
+{
+  text-align: right;
+}
+
+.downloadIcon:hover
+{
+  color: #669df0;
+}*/
+
+
+
+div#link-to-wiki:hover span#link-to-wiki-text,
+div#link-to-wiki:hover i.wikiIcon,
+div#link-to-wiki:hover
+{
+  color: #669df0;
+  border-color: #669df0;
+}
+
+span#link-to-wiki-text
+{
+  color: #171b41;
+  font-family: Verdana;
+}
+
+i.wikiIcon:hover
+{
+  text-decoration: none;
+}
+
+i.wikiIcon
+{
+  color: #171b41;
+}
+
+div#link-to-wiki
+{
+  border: 2px solid #171b41;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 5px 10px;
+  float: right;
+}
+
+a > div#link-to-wiki > div
+{
+  margin-right: 15px;
+  margin-top: 3px;
+  float: left;
+}
+
+td.package-version-text
+{
+  color: #171b41;
+  font-family: Verdana;
+  vertical-align: middle;
+}
+
+td.package-download-icon > a.downloadIcon
+{
+  margin-left: 10px;
+  padding-left: 25px;
+}
+
+table, td, th
+{
+  border: none;
+}
+
+table
+{
+  /*width: 100%;*/
+  border-collapse: collapse;
+}
+
+
+
+
+@media (max-width: 767px)
+{
+  .container ul
+  {
+    padding: 0;
+    text-align: left;
+  }
+
+  .container-sm
+  {
+    width: 90%;
+    position: relative;
+    text-align: left;
+  }
+}
