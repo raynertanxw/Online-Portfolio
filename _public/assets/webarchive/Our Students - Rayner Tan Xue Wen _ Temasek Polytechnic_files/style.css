@@ -1,0 +1,102 @@
+@media screen and (min-width: 992px){
+.tp-col-1 .tp--container, .tp-col-2 .tp--container, .tp-col-3 .tp--container, .tp-col-4 .tp--container, .tp-col-5 .tp--container, .tp-col-6 .tp--container, .tp-col-7 .tp--container, .tp-col-8 .tp--container, .tp-col-9 .tp--container, .tp-col-10 .tp--container, .tp-col-11 .tp--container, .tp-col-12 .tp--container {
+    /* padding-right: 20px; */
+}
+}
+
+.tp-custom-container .has-corner-background.has-text-field-component.text .cmp-text {
+    background-color: transparent;
+    padding: 20px 10px 10px 20px;
+}
+
+
+.red-button {
+	background: linear-gradient(124.79deg,#ff4b33 1.06%,#c53642 91.86%)!important
+}
+
+#mou-thankyou {
+	background-image: url(https://www.tp.edu.sg/content/dam/tp-web/images/research---industry/industry-partners---internships/confetti.gif); 
+	background-size: cover;
+}
+
+h3 {
+	position: relative;	
+}
+
+h3 a {
+	position:absolute;
+	top:-130px;
+}
+
+.cmp-home-carousel .tp--carousel-control {
+	box-shadow: .125rem .125rem .5rem .1rem rgba(0,0,0,.6)!important
+}
+
+.cmp-home-carousel .tp--carousel-indicator .caro-indicator {
+	width: 10px !important;
+    height: 10px !important;
+	background-color: #ffffff !important;
+	border: none !important;
+	box-shadow: .125rem .125rem .25rem rgba(0,0,0,.4)!important;
+}
+
+.cmp-home-carousel .tp--carousel-indicator .caro-indicator.active {
+    background-color: #e6162f !important;
+    border: none !important;
+}
+
+.carousel-indicators li {
+	opacity: 1 !important;
+}
+
+.btn.tp-black-button {
+    background: -webkit-gradient(linear,left top,right top,from(#535353),to(#000));
+    background: linear-gradient(
+90deg
+,#535353,#000);
+    border: none;
+    color: #fff;
+	    padding: 17px 30px;
+    border-radius: 50px;
+    min-width: 180px;
+    min-height: 50px;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: .08em;
+    font-family: Roboto,sans-serif;
+}
+
+
+a.tp--sub-mainmenu-link {
+	padding:0 5px 0 5px;
+	color:#EEE;
+}
+
+a.tp--sub-mainmenu-link:hover {
+	text-decoration:underline;
+    /* background-color: #EEE;
+	color:#FFF; */
+}
+
+
+a.tp--sub-mainmenu-title {
+	padding:0 5px 0 5px;
+}
+
+a.tp--sub-mainmenu-title:hover {
+	text-decoration:underline;
+    /* background-color: #EEE; */
+}
+
+.cmp-main-header .tp--top-header .navbar .nav-item .nav-link {
+    padding: 0 12px!important;
+}
+
+.entryrequirementtiles .cmp-tiles {
+	margin-top:-40px;
+	padding: 20px 0;
+    position: relative;
+}
