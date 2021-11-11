@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+    <title>Wantirna Chapel Tour</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <script src="./scripts/three.min.js"></script>
+    <script src="./scripts/panolens.min.js"></script>
+  </head>
+
+  <body>
+    <audio src="./assets/audio/bgm.mp3" id="bgm" muted autoplay loop></audio>
+    
+    <div id="container">
+      <div id="loading-blocker" class="finish">
+        <div id="loader"></div>
+      </div>
+      <div id="progress-bar" class="finish" style="width: 100%;"></div>
+      
+      <div id="pano-switch-container">
+        <div class="pano-switch" onclick="jumpToPanoLobby()">Lobby</div>
+        <div class="pano-switch" onclick="jumpToPanoChapel()">Chapel</div>
+        <div class="pano-switch" onclick="jumpToPanoBaptismal()">Baptismal</div>
+        <div class="pano-switch" onclick="jumpToPanoCulturalHall()">Cultural Hall</div>
+        <div class="pano-switch" onclick="jumpToPanoTemple()">Temple</div>
+      </div>
+      <div id="info-card" onclick="infoCardOnClick()">&nbsp;&nbsp;&#9432;&nbsp;&nbsp;&nbsp;</div>
+      <div id="desc-bg">
+        <!-- Description Containers -->
+        <div id="desc-mission-office" class="desc-container">
+          <iframe class="youtube-video tall-vid" src="https://www.youtube.com/embed/Zv4jNPTnfKI?enablejsapi=1" allowfullscreen></iframe>
+          <div class="desc-title">Mission Office</div>
+          <div class="desc-text">
+            <p>This is the Mission Office! It is where the Australia Melbourne Mission is based. You may be wondering, who or what are these missionaries?</p>
+            <br>
+            <p><strong>Meet the Missionaries!</strong></p>
+            <p>Missionaries are members of The Church of Jesus Christ of Latter-day Saints who leave their homes for 18 months—2 years to serve others and share the gospel.</p>
+            <p>They come from all over the world. They are either young adults or retired married couples. But whatever their age, their motivation is sincere—they leave their homes and families for up to two years to do what Jesus taught his Apostles:</p>
+            <p><em>“Go ye into all the world, and preach the gospel to every creature.” <strong>Mark 16:15</strong></em></p>
+            <br>
+            <p><strong>Pretty normal people ... mostly</strong></p>
+            <p>Missionaries are just regular people like you and me. Before leaving on a mission, they were students, employees, athletes, bookworms, musicians, and, well, you get the idea. After their service, they will return home to finish college, work, start and raise a family, and live a pretty normal life.</p>
+            <br>
+            <p><strong>Two by two</strong></p>
+            <p>You’ll most often see missionaries in pairs, which is to help keep them safe and to follow the pattern Jesus set for His messengers:</p>
+            <p><em>“And he called unto him the twelve, and began to send them forth by two and two.” <strong>Mark 6:7</strong></em></p>
+            <p>Missionaries have a companion wherever they go, which helps to keep them safe and focused on one thing: helping others come closer to God.</p>
+            <br>
+            <p><strong>How can the Missionaries help me?</strong></p>
+            <p>Meet with missionaries via voice or video call! Find comfort by talking with missionaries. We can read the scriptures with you and help you find peace through prayer.</p>
+            <p>If you want to find out more and reach out to us, you can call<br><strong>(03) 9801 5980</strong> or visit<br><a target="_blank" href="https://www.comeuntochrist.org/belong/meet-missionaries/how-can-missionaries-help-me">https://www.comeuntochrist.org/belong/meet-missionaries/how-can-missionaries-help-me</a></p>
+            </div>
+        </div>
+
+        <div id="john-baptizing-jesus" class="desc-container">
+          <div class="gradient-top"></div>
+          <img src="./assets/images/infospots/john_baptizes_christ.jpeg" class="tall-pic">
+          <div class="desc-title">John Baptizing Jesus</div>
+          <div class="desc-text">
+            <p>At the beginning of Jesus Christ’s ministry, He traveled from Galilee to the Jordan River. John the Baptist was there preaching and baptizing the people. Jesus went to John and asked to be baptized. John did not want to do it, because he thought that Jesus should baptize him. He asked Jesus why He needed to be baptized. The Savior explained that He needed to be baptized to be obedient to the commandments of Heavenly Father.</p>
+						<p>“And John went down into the water and baptized him.</p>
+						<p>“And Jesus when he was baptized, went up straightway out of the water; and John saw, and lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove and lighting upon Jesus.</p>
+						<p>“And lo, he heard a voice from heaven, saying, This is my beloved Son, in whom I am well pleased. Hear ye him.” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/3.44-46?lang=eng#p44">JST, Matt. 3:44–46</a>, page 802, LDS edition of the King James Bible.)</p>
+						<p>Jesus Christ set the example for us to be baptized. He has told us, “Except a man be born of water and of the Spirit, he cannot enter into the kingdom of God” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/john/3.5?lang=eng#p5">John 3:5</a>).</p>
+          </div>
+          <iframe class="youtube-video" src="https://www.youtube.com/embed/9_dr9njVzKM?enablejsapi=1" allowfullscreen></iframe>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="jesus-christ-visits-the-americas" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Jesus Christ Vists the Americas</div>
+          <img src="./assets/images/infospots/christ_teaching_nephites.jpeg">
+          <div class="desc-text">
+            <p>See more <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/8?lang=eng">3 Nephi 8–12</a>.</p>
+						<p>For three days thick darkness covered the land of the Nephites. There was not a glimmer of sunlight or a twinkle of starlight. Not even a candle would light.</p>
+						<p>The frightened Nephites had listened to the thunder and terrible storms and felt earthquakes shake the ground. Now in the darkness many people cried and howled. They wished they had followed the prophet Nephi’s teachings and repented!</p>
+						<p>Suddenly a voice was heard throughout all the land: “Behold, I am Jesus Christ the Son of God. I created the heavens and the earth, and all things that in them are. I was with the Father from the beginning.”</p>
+						<p>Jesus said He had come to earth to save the world from sin. He had laid down His life and was now resurrected. He invited everyone to repent and be saved.</p>
+						<p>The Nephites were so astonished to hear the voice of Jesus that they sat silent for many hours, pondering what they had heard.</p>
+						<p>In the morning it was light again, and the people began to rejoice. Many people gathered around the temple in the land of Bountiful to talk about the amazing things that had happened. Then from heaven they heard a quiet voice. The voice caused their hearts to burn, but they couldn’t understand it.</p>
+						<p>The voice came again, but they still did not understand the words.</p>
+						<p>A third time the voice came, saying, “Behold my Beloved Son, in whom I am well pleased, in whom I have glorified my name﻿—hear ye him.”</p>
+						<p>The people looked up and saw Jesus coming down from heaven until He stood right there with them. The Nephites fell to the earth. They remembered the words of the prophets﻿—that Jesus Christ would visit them after He had been crucified and resurrected.</p>
+						<p>Jesus let every person touch His hands and feet to feel the places where He had been nailed to the cross in Jerusalem. When all the people had seen and felt for themselves, they knew He was the resurrected Savior. They cried, “Hosanna!” and worshipped Him.</p>
+						<p>Jesus called for the prophet Nephi to come to Him. He gave Nephi and 11 other righteous men the authority to teach and baptize after He returned to heaven. These 12 became the disciples of Jesus Christ’s Church in the New World.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="the-first-vision" class="desc-container">
+          <div class="gradient-top tall-pic"></div>
+          <div class="desc-title">The First Vision</div>
+          <img src="./assets/images/infospots/the_first_vision.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>In the spring of 1820, God the Father and Jesus Christ appeared to Joseph Smith as he prayed in a grove of trees near his home in western New York. This event is known as the First Vision. (To read about the vision in Joseph’s own words, <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=eng">click here</a>.)</p>
+            <p>In the early 1800s in the United States there was great excitement about religion. Joseph’s family members had joined different churches, but Joseph was unsure which one he should join.</p>
+            <p>When Joseph was 14 years old, he was inspired by <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/james/1.5?lang=eng#p5">James 1:5</a>, which promises, “If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.” Joseph determined to pray to know which church he should join and to ask for forgiveness of his sins.</p>
+            <p>When Joseph knelt to offer up the desires of his heart, a dark power overcame him. It bound his tongue as thick darkness gathered around him. Joseph exerted all his power to call upon God.</p>
+            <p>He described what happened next:</p>
+            <p>“I saw a pillar of light exactly over my head, above the brightness of the sun, which descended gradually until it fell upon me.</p>
+            <p>“… When the light rested upon me I saw two Personages, whose brightness and glory defy all description, standing above me in the air. One of them spake unto me, calling me by name and said, pointing to the other﻿—<cite>This is My Beloved Son. Hear Him!”</cite> (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1.16-17?lang=eng#p16">Joseph Smith﻿—History 1:16–17</a>).</p>
+            <p>At the moment the light appeared, Joseph felt delivered from the enemy that had held him bound. Joseph felt great joy and love for several days after.</p>
+            <p>During the vision, Joseph asked which church was correct, and Jesus Christ answered, telling Joseph not to join any of them. The Lord explained that the churches of the day believed “in incorrect doctrines and that none of them was acknowledged of God as His Church and kingdom” (<cite>Teachings of Presidents of the Church: Joseph Smith</cite> [2007], <a class=cross-ref target="_blank" href="https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-38?lang=eng">438</a>;<cite>Times and Seasons,</cite> Mar. 1, 1842, p. 707; see also <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1.19?lang=eng#p19">Joseph Smith﻿—History 1:19</a>).</p>
+            <p>The First Vision marked the beginning of the Restoration of the gospel of Jesus Christ in this last dispensation. Joseph Smith was chosen to be the Lord’s prophet in the latter days. Over time, the Lord restored His authority and Church through Joseph Smith. God’s children were again blessed with revelation through prophets called of God, just as they were in biblical times. Revelation continues to this day through each of God’s chosen prophets who have succeeded Joseph Smith.</p>
+            <p><strong>Please see the new web page, “<a target="_blank" href=http://www.churchofjesuschrist.org/topics/restoration>The First Vision</a>,” created for the bicentennial of the Restoration.</strong></p>
+          </div>
+          <iframe class="youtube-video" src="https://www.youtube.com/embed/RBvk_6_dW6k?enablejsapi=1" allowfullscreen></iframe>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="the-second-coming" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">The Second Coming</div>
+          <img src="./assets/images/infospots/the_second_coming.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>As Jesus Christ ascended into heaven at the completion of His mortal ministry, two angels declared to His Apostles, “This same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/acts/1.11?lang=eng#p11">Acts 1:11</a>). Since that time, believers have looked forward to the Second Coming of Jesus Christ.</p>
+            <p>When the Savior comes again, He will come in power and glory to claim the earth as His kingdom. His Second Coming will mark the beginning of the Millennium.</p>
+            <p>The righteous need not fear the Second Coming or the signs that precede it. The Savior’s words to His Apostles apply to all who prepare for His coming and who look forward to it with joy: “Be not troubled, for, when all these things shall come to pass, ye may know that the promises which have been made unto you shall be fulfilled” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/45.35?lang=eng#p35">Doctrine and Covenants 45:35</a>).</p>
+            <p>For more information, <a target="_blank" href="https://www.churchofjesuschrist.org/study/manual/gospel-topics/second-coming-of-jesus-christ?lang=eng">Click here</a></p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+        
+        <div id="relief-society" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Relief Society</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/relief_society.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>Founded in 1842 in Nauvoo, Illinois, United States, the Relief Society is one of the oldest and largest women's organizations in the world! With more than 7 million members in over 188 countries and territories, the Relief Society goes about doing much good in the communicities they are in.</p>
+            <p>Relief Society is the women’s organization of The Church of Jesus Christ of Latter-day Saints. Its purpose is to help prepare women for the blessings of eternal life as they increase faith in Heavenly Father and Jesus Christ and His Atonement; strengthen individuals, families, and homes through ordinances and covenants; and work in unity to help those in need.</p>
+            <p>All adult women in the Church are members of Relief Society. Through Relief Society, sisters “receive a vision and assurance of their identity as daughters of God” with lives of purpose and direction (<cite>Daughters in My Kingdom: The History and Work of Relief Society</cite> [2011], <a class=cross-ref target="_blank" href="https://www.churchofjesuschrist.org/study/manual/daughters-in-my-kingdom-the-history-and-work-of-relief-society/live-up-to-your-privilege?lang=eng">171</a>). Sisters also increase their self-reliance, enlarge their talents, expand their knowledge, strengthen families, and reach out to those in need. These ministering, leadership, and teaching opportunities strengthen women in their efforts to become disciples of Jesus Christ.</p>
+            <p>The First Presidency stated, “We testify that the Lord has restored the fulness of the gospel through the Prophet Joseph Smith and that Relief Society is an important part of that restoration” (<cite>Daughters in My Kingdom,</cite> ix).</p>
+            <p>The Relief Society was organized in March 1842 by the Prophet Joseph Smith. It was originally called the Female Relief Society of Nauvoo, and Emma Hale Smith, the wife of Joseph Smith, was selected as its first president. Shortly before Joseph Smith organized the Relief Society he explained that the sisters would be organized “after the pattern of the priesthood.” He also taught, “The Church was never perfectly organized until the women were thus organized” (<cite>Teachings of Presidents of the Church: Joseph Smith</cite> [2007], 451).</p>
+            <p>“While little is known about a formal organization of women in the New Testament, evidence suggests that women were vital participants in the Savior’s ministry” (<cite>Daughters in My Kingdom,</cite><a class=cross-ref target="_blank" href="https://www.churchofjesuschrist.org/study/manual/daughters-in-my-kingdom-the-history-and-work-of-relief-society/relief-society-a-restoration-of-an-ancient-pattern?lang=eng">3</a>). Paul wrote to the Roman Saints, saying, “I commend unto you Phebe our sister, which is a servant of the church which is at Cenchrea: that ye receive her in the Lord, as becometh saints, and that ye assist her in whatsoever business she hath need of you: for she hath been a succourer of many, and of myself also” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/rom/16.1-2?lang=eng#p1">Romans 16:1–2</a>).</p>
+            <p>Historical records of the Church in our dispensation describe the devotion of early Relief Society women as they bore testimony of the gospel of Jesus Christ and served the sick and poor among them to build up the kingdom of God. Relief Society provided opportunities for Latter-day Saint women to expand their influence and to bless their families, wards, stakes, communities, and nations. Throughout its history, members of the organization have spoken up regarding relevant issues of their time. Relief Society continues to provide such opportunities for women today.</p>
+            <p>We invite you to read more about the remarkable history of the Relief Society and the positive impact that it has made. <a target="_blank" href="https://history.churchofjesuschrist.org/landing/the-story-of-relief-society?lang=eng">Click here</a> to read more.</p>
+          </div>
+          <img src="./assets/images/infospots/relief_society_seal.jpeg" class="tall-pic">
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="sunday-school" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Sunday School</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/sunday_school.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>All members of The Church of Jesus Christ of Latter-day Saints, ages 12 and older, are encouraged to participate in Sunday School classes, which are held on the first and third Sundays as part of the regular weekly worship services. Those of other faiths are also invited to attend. The purpose of Sunday School is to teach the gospel of <a target="_blank" href="http://www.mormonnewsroom.org/article/jesus-christ">Jesus Christ</a> and strengthen individuals and families through teaching, learning, and friendship.</p>
+            <p>Classes for the youth are divided by age. Children between the ages of 18 months to 11 years attend <a target="_blank" href="http://www.mormonnewsroom.org/article/primary">Primary</a>. A separate class is held for adults. Volunteer teachers who are assigned by the local congregational leader (<a target="_blank" href="http://www.mormonnewsroom.org/article/bishop">bishop</a> or <a target="_blank" href="http://www.mormonnewsroom.org/article/branch">branch</a> president) follow curriculum that focuses on a different volume of scripture each year, rotating between courses on the <a target="_blank" href="http://www.mormonnewsroom.org/article/bible">Old Testament</a>, <a target="_blank" href="http://www.mormonnewsroom.org/article/bible">New Testament</a>, <a target="_blank" href="http://www.mormonnewsroom.org/article/book-of-mormon">Book of Mormon</a> and <a target="_blank" href="http://www.mormonnewsroom.org/article/doctrine-and-covenants">Doctrine and Covenants</a> and Church History.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="missionary-plaques" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Missionary Plaques</div>
+          <img src="./assets/images/infospots/mission_plaques.jpg" class="tall-pic">
+          <div class="desc-text">
+            <p>Local members from right here in Melbourne Australia, who volunteer as full-time missionaries are assigned to many different places! They go to Mexico, Argentina, Russia, Taiwan, Singapore, England, America, South Africa, Phillippines, Kiribati, just to name a few!</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="jesus-praying-in-gethsemane" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Jesus Praying in Gethsemane</div>
+          <img src="./assets/images/infospots/jesus_praying_in_gethsemane.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>After the Last Supper with His Apostles, the Savior made His way to the Garden of Gethsemane—a place He frequented to pray—with his 11 remaining Apostles. The 12th, Judas Iscariot, had already left to carry out his plans of betrayal, which would come to fruition before the night was spent.</p>
+            <p>The Savior clearly understood His mission and what He had to do to fulfill it. He needed a quiet place to commune with His Father. Leaving eight of the Apostles a way off, He requested that Peter, James, and John accompany Him further into the garden, which they did. Jesus became heavy and overwhelmed by sadness and expressed that to the three. He asked them to watch with Him while He prayed to the Father. Though they tried, sleep overcame them. The Savior interrupted His praying twice to wake His three slumbering disciples and again requested that they watch with Him, exclaiming, “What, could ye not watch with me one hour?” He then patiently acknowledged their efforts by saying, “The spirit indeed is willing, but the flesh is weak” (<a href="https://www.lds.org/scriptures/nt/matt/26.40-41?lang=eng#39" target="_blank">Matthew 26:40–41</a>).</p>
+            <p><strong>The Hour Is at Hand</strong></p>
+            <p>When He approached them for the third time, He essentially told them it was too late, saying, “Sleep on now, and take your rest: behold, the hour is at hand, and the Son of man is betrayed into the hands of sinners” (<a href="https://www.lds.org/scriptures/nt/matt/26.45?lang=eng#44" target="_blank">Matthew 26:45</a>). Already, the torches of the company, brought by the traitorous Apostle, Judas Iscariot, were visible in the distance. In a matter of moments He would be arrested and then meet His fate of crucifixion on the cross.</p>
+            <p>The physical events and circumstances that took place in the Garden of Gethsemane are simpler to understand than what happened spiritually. What was happening as the Savior began to sweat “great drops of blood”?</p>
+            <p><strong>The Greatest Act of Love</strong></p>
+            <p>We believe that it was during these sacred hours in Gethsemane that the Savior began to atone for the sins of all mankind, from the beginning of time until the present. In that quiet garden He willingly took upon Himself all of the pain and suffering the world has ever known. This was the greatest act of love ever performed—a voluntary act that continues to provide hope for each of us. Because of His willing sacrifice, you and I can experience peace, joy, and wholeness. This <a href="https://www.youtube.com/watch?v=5uSGSvKy6Io" target="_blank">song</a> describes the love that is still extended to us today through the sacrifice He made that fateful night over two thousand years ago.</p>
+            <p>To learn more about the sacred events that happened in the Garden of Gethsemane, refer to the three Synoptic Gospels, which are <a href="https://www.lds.org/scriptures/nt/matt/26?lang=eng" target="_blank">Matthew</a>, <a href="https://www.lds.org/scriptures/nt/mark/14?lang=eng" target="_blank">Mark</a>, and <a href="https://www.lds.org/scriptures/nt/luke/22?lang=eng" target="_blank">Luke</a>. For additional details study the Gospel of <a href="https://www.lds.org/scriptures/nt/john/18?lang=eng" target="_blank">John</a>—all of which are found in the <a href="https://www.lds.org/scriptures/nt?lang=eng" target="_blank">Holy Bible</a>. You can also study an inspiring account of the proceedings in chapter 33 of <a href="https://www.lds.org/manual/jesus-the-christ/chapter-33?lang=eng" target="_blank"><em>Jesus the Christ</em></a>, a book by James E. Talmage.</p>
+          </div>
+          <iframe class="youtube-video tall-vid" src="https://www.youtube.com/embed/goR5FO1vge8?enablejsapi=1" allowfullscreen></iframe>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="baptismal-font" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Baptismal Font</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/baptismal_font.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>Baptism by immersion in water by one having authority is the first saving ordinance of the gospel and is necessary for an individual to become a member of The Church of Jesus Christ of Latter-day Saints and to receive eternal salvation. All who seek eternal life must follow the example of the Savior by being baptized and receiving the gift of the Holy Ghost.</p>
+            <p><strong>Baptism in the Lord’s Way</strong></p>
+            <p>The Savior revealed the true method of baptism to the Prophet Joseph Smith, making clear that the ordinance must be performed by one having priesthood authority and that it must be done by immersion:</p>
+            <p>“The person who is called of God and has authority from Jesus Christ to baptize, shall go down into the water with the person who has presented himself or herself for baptism, and shall say, calling him or her by name: Having been commissioned of Jesus Christ, I baptize you in the name of the Father, and of the Son, and of the Holy Ghost. Amen.</p>
+            <p>“Then shall he immerse him or her in the water, and come forth again out of the water” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20.73-74?lang=eng#p73">Doctrine and Covenants 20:73–74</a>).</p>
+            <p>Immersion is symbolic of the death of a person’s sinful life and the rebirth into a spiritual life, dedicated to the service of God and His children. It is also symbolic of death and resurrection. (See <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/rom/6.3-6?lang=eng#p3">Romans 6:3–6</a>.)</p>
+            <p><strong>The Baptismal Covenant</strong></p>
+            <p>Those who are baptized enter into a covenant with God to take upon themselves the name of Jesus Christ, keep His commandments, and serve Him to the end (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18.8-10?lang=eng#p8">Mosiah 18:8–10</a>; <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20.37?lang=eng#p37">Doctrine and Covenants 20:37</a>). Church members renew this covenant each time they partake of the sacrament (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20.77,79?lang=eng#p77">Doctrine and Covenants 20:77, 79</a>).</p>
+            <p>Those who keep the covenants they made at baptism are blessed by the Lord for their faithfulness. Some of the blessings include the constant companionship of the Holy Ghost, the remission of sins, and the privilege of being spiritually reborn. If they continue faithfully, they are promised eternal life (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31.19-20?lang=eng#p19">2 Nephi 31:19–20</a>).</p>
+            <p><strong>Little Children and Baptism</strong></p>
+            <p>From latter-day revelation, we know that little children are redeemed through the mercy of Jesus Christ. The Lord said, “They cannot sin, for power is not given unto Satan to tempt little children, until they begin to become accountable before me” (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/29.46-47?lang=eng#p46">Doctrine and Covenants 29:46–47</a>). They are not to be baptized until they reach the age of accountability, which the Lord has revealed to be eight years of age (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68.27?lang=eng#p27">Doctrine and Covenants 68:27</a>; <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/jst/jst-gen/17.11?lang=eng#p11">Joseph Smith Translation, Genesis 17:11</a>). Anyone who claims that little children need baptism “denieth the mercies of Christ, and setteth at naught the atonement of him and the power of his redemption” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8.20?lang=eng#p20">Moroni 8:20</a>; see also verses <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8.8-19?lang=eng#p8">8–19</a>, <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8.21-24?lang=eng#p21">21–24</a>).</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="baptism-for-the-dead" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Baptisms for the Dead</div>
+          <img src="./assets/images/infospots/baptismal-font-picture-of-temple.jpg" class="tall-pic">
+          <div class="desc-text">
+            <p>Jesus Christ taught that <a target="_blank" class=cross-ref href="https://www.churchofjesuschrist.org/study/manual/gospel-topics/baptism?lang=eng">baptism</a> is essential to the salvation of all who have lived on earth (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/john/3.5?lang=eng#p5">John 3:5</a>). Many people, however, have died without being baptized. Others were baptized without proper authority. Because God is merciful, He has prepared a way for all people to receive the blessings of baptism. By performing proxy baptisms in behalf of those who have died, Church members offer these blessings to deceased ancestors. Individuals can then choose to accept or reject what has been done in their behalf.</p>
+            <p>Jesus Christ said, “Except a man be born of water and of the Spirit, he cannot enter into the kingdom of God” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/john/3.5?lang=eng#p5">John 3:5</a>). Even Jesus Christ Himself was baptized (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/matt/3.13-17?lang=eng#p13">Matthew 3:13–17</a>).</p>
+            <p>Many people have lived on the earth who never heard of the gospel of Jesus Christ and who were not baptized. Others lived without fully understanding the importance of the ordinance of baptism. Still others were baptized, but without proper authority.</p>
+            <p>Because He is a loving God, the Lord does not damn those people who, through no fault of their own, never had the opportunity for baptism. He has therefore authorized baptisms to be performed by proxy for them. A living person, often a descendant who has become a member of The Church of Jesus Christ of Latter-day Saints, is baptized in behalf of a deceased person. This work is done by Church members in temples throughout the world.</p>
+            <p>Some people have misunderstood that when baptisms for the dead are performed, deceased persons are baptized into the Church against their will. This is not the case. Each individual has agency, or the right to choose. The validity of a baptism for the dead depends on the deceased person accepting it and choosing to accept and follow the Savior while residing in the spirit world. The names of deceased persons are not added to the membership records of the Church.</p>
+            <p>The New Testament indicates that baptisms for the dead were done during the time of the Apostle Paul (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/1-cor/15.29?lang=eng#p29">1 Corinthians 15:29</a>). This ordinance was restored with the establishment of The Church of Jesus Christ of Latter-day Saints.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="young-women" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Young Women</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/young_women.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>The Young Women organization of The Church of Jesus Christ of Latter-day Saints provides instruction, encouragement and support in living the gospel of Jesus Christ for teenage female Church members ages 12 through 17. Its purpose is to help young women build their faith in Heavenly Father and Jesus Christ, understand their identities as daughters of God, obey God’s commandments and feel and recognize His guidance in their lives.</p>
+            <p>organization promotes the growth and development of each young woman through Sunday instruction, weekday activities and a goal-setting and achievement program called Personal Progress.</p> 
+            <p>To learn more about the Young Women organizaiton, <a target="_blank" href="https://newsroom.churchofjesuschrist.org/article/young-women">Click here</a></p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <!-- Can't show this because of release forms I suppose... Just hide for now.
+        <div id="cultural-hall-hovercraft" class="desc-container">
+          <img src="./assets/images/gifs/homemade_hovercraft.gif" class="sticky">
+          <div class="gradient-top sticky"></div>
+          <div class="desc-title">Hover Craft</div>
+          <div class="desc-text">We have fun activities too! Like making our own hovercraft.</div>
+          <div class="gradient-btm"></div>
+        </div> -->
+
+        <div id="elders-quorum" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Elders Quorum</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/priesthood.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>The priesthood is the power and authority of God. It is conferred upon worthy male members of the Church. Those who hold priesthood keys direct the administration of the ordinances of the gospel, the preaching of the gospel, and the government of the kingdom of God on the earth.</p>
+            <p>A priesthood quorum is an organized group of men or young men who hold the priesthood. The primary purposes of quorums are to serve others, build unity and brotherhood, and instruct members in doctrines, principles, and duties.</p>
+            <p>As part of church, the Elders Quorum meet together for faith-building lessons. One of their major responsibilities is service; they care for the widows, do yard work, or even haul furniture. They often arrange social activities, such as barbeques or sporting events.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="basketball" class="desc-container">
+          <div class="desc-title">Basketball</div>
+          <iframe class="youtube-video tall-vid" src="https://www.youtube.com/embed/0SyN-EeYTBU?enablejsapi=1" allowfullscreen></iframe>
+          <div class="desc-text">
+            <p>In the cultural hall, we have activities that bring Church members together as “fellowcitizens with the saints” (<a target="_blank" class="scripture-ref" href="https://www.churchofjesuschrist.org/study/scriptures/nt/eph/2.19?lang=eng#p19">Ephesians 2:19</a>). In addition to providing fun and entertainment, activities also build testimonies, strengthen families, and foster unity and personal growth.</p>
+            <p>As individuals, as families, and as Church groups, members are encouraged to participate in activities that contribute to their health and fitness. These activities may include walking, jogging, aerobic and other exercise programs, health classes, and fitness training.</p>
+            <p>Church sports activities provide opportunities for wholesome physical activity, fellowship, and sportsmanship. The emphasis in Church sports is on participation, sportsmanship, and skill development, not competition. All team members have regular opportunities to play.</p>
+          </div>
+        </div>
+
+        <div id="christ-ordaining-the-apostles" class="desc-container">
+          <div class="gradient-top"></div>
+          <img src="./assets/images/infospots/christ_ordaining_the_apostles.jpeg">
+          <div class="desc-title">Christ Ordaining the Apostles</div>
+          <div class="desc-text">
+            <p>During His mortal ministry, the Savior called, ordained, and commissioned twelve Apostles. He conferred priesthood keys upon them, and they received a witness of His divinity. Under the Savior’s direction, the Apostles helped govern the work of the Church and were prepared for the time when He would no longer be on the earth.</p>
+            <p>Jesus conferred priesthood keys upon His Apostles so they would have authority to direct the Church both before and after His death. From an eternal perspective, keys are critical in establishing and maintaining order in the Lord’s Church, thus helping to bring to pass the immortality and eternal life of man.</p>
+            <p>Today, the same priesthood keys are held by the First Presidency and the Quorum of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints. Just like the twelve ordained by Jesus Christ, they are modern-day witnesses of Christ.</p>
+            <p>In addition to their primary responsibility to be special witnesses of the name of Christ throughout the world, the apostles have heavy administrative responsibilities as they oversee the orderly progress and development of the global Church.</p>
+            <p>Just as their counterparts in ancient times were sent throughout the world, the apostles today travel the world to strengthen and encourage Church members, to organize new congregations and to conduct the business of the Church. Sometimes this means meeting with national leaders to negotiate permission for the Church to be established in yet another country.</p>
+          </div>
+          <iframe class="youtube-video tall-vid" src="https://www.youtube.com/embed/e-3TEnEzXHk?enablejsapi=1" allowfullscreen></iframe>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="family-proclamation" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">The Family: A Proclamation to the World</div>
+          <img src="./assets/images/infospots/mary-joseph-and-baby-jesus.jpg" class="tall-pic">
+          <div class="desc-text">
+            <p>An excerpt from <a target="_blank" href="https://www.churchofjesuschrist.org/study/manual/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng">The Family: A Proclamation to the World</a>. This proclamation was read by President Gordon B. Hinckley as part of his message at the General Relief Society Meeting held September 23, 1995, in Salt Lake City, Utah.</p>
+            <hr>
+            <p>We, the First Presidency and the Council of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints, solemnly proclaim that marriage between a man and a woman is ordained of God and that the family is central to the Creator’s plan for the eternal destiny of His children.</p>
+            <p>All human beings—male and female—are created in the image of God. Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature and destiny. Gender is an essential characteristic of individual premortal, mortal, and eternal identity and purpose.</p>
+            <p>In the premortal realm, spirit sons and daughters knew and worshipped God as their Eternal Father and accepted His plan by which His children could obtain a physical body and gain earthly experience to progress toward perfection and ultimately realize their divine destiny as heirs of eternal life. The divine plan of happiness enables family relationships to be perpetuated beyond the grave. Sacred ordinances and covenants available in holy temples make it possible for individuals to return to the presence of God and for families to be united eternally.</p>
+            <p>The first commandment that God gave to Adam and Eve pertained to their potential for parenthood as husband and wife. We declare that God’s commandment for His children to multiply and replenish the earth remains in force. We further declare that God has commanded that the sacred powers of procreation are to be employed only between man and woman, lawfully wedded as husband and wife.</p>
+            <p>We declare the means by which mortal life is created to be divinely appointed. We affirm the sanctity of life and of its importance in God’s eternal plan.</p>
+            <p>Husband and wife have a solemn responsibility to love and care for each other and for their children. “Children are an heritage of the Lord” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/ot/ps/127.3?lang=eng#p3">Psalm 127:3</a>). Parents have a sacred duty to rear their children in love and righteousness, to provide for their physical and spiritual needs, and to teach them to love and serve one another, observe the commandments of God, and be law-abiding citizens wherever they live. Husbands and wives—mothers and fathers—will be held accountable before God for the discharge of these obligations.</p>
+            <p>The family is ordained of God. Marriage between man and woman is essential to His eternal plan. Children are entitled to birth within the bonds of matrimony, and to be reared by a father and a mother who honor marital vows with complete fidelity. Happiness in family life is most likely to be achieved when founded upon the teachings of the Lord Jesus Christ. Successful marriages and families are established and maintained on principles of faith, prayer, repentance, forgiveness, respect, love, compassion, work, and wholesome recreational activities. By divine design, fathers are to preside over their families in love and righteousness and are responsible to provide the necessities of life and protection for their families. Mothers are primarily responsible for the nurture of their children. In these sacred responsibilities, fathers and mothers are obligated to help one another as equal partners. Disability, death, or other circumstances may necessitate individual adaptation. Extended families should lend support when needed.</p>
+            <p>We warn that individuals who violate covenants of chastity, who abuse spouse or offspring, or who fail to fulfill family responsibilities will one day stand accountable before God. Further, we warn that the disintegration of the family will bring upon individuals, communities, and nations the calamities foretold by ancient and modern prophets.</p>
+            <p>We call upon responsible citizens and officers of government everywhere to promote those measures designed to maintain and strengthen the family as the fundamental unit of society.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="the-living-christ" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">The Living Christ: The Testimony of the Apostles</div>
+          <img src="./assets/images/infospots/christ_land_bountiful.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>An excerpt from <a target="_blank" href="https://www.churchofjesuschrist.org/study/manual/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng">The Living Christ: The Testimony of the Apostles</a>, a one-page declaration that was issued on January 1, 2000 and was signed by the fifteen apostles in The Church of Jesus Christ of Latter Day Saints: the 3 members of the First Presidency and the members of the Quorum of the Twelve Apostles. The declaration commemorates the birth of Jesus and is a reaffirmation of church doctrines and teachings about him.</p>
+            <hr>
+            <p>As we commemorate the birth of Jesus Christ two millennia ago, we offer our testimony of the reality of His matchless life and the infinite virtue of His great atoning sacrifice. None other has had so profound an influence upon all who have lived and will yet live upon the earth.</p>
+            <p>He was the Great Jehovah of the Old Testament, the Messiah of the New. Under the direction of His Father, He was the creator of the earth. “All things were made by him; and without him was not any thing made that was made” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/john/1.3?lang=eng#p3">John 1:3</a>). Though sinless, He was baptized to fulfill all righteousness. He “went about doing good” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/acts/10.38?lang=eng#p38">Acts 10:38</a>), yet was despised for it. His gospel was a message of peace and goodwill. He entreated all to follow His example. He walked the roads of Palestine, healing the sick, causing the blind to see, and raising the dead. He taught the truths of eternity, the reality of our premortal existence, the purpose of our life on earth, and the potential for the sons and daughters of God in the life to come.</p>
+            <p>He instituted the sacrament as a reminder of His great atoning sacrifice. He was arrested and condemned on spurious charges, convicted to satisfy a mob, and sentenced to die on Calvary’s cross. He gave His life to atone for the sins of all mankind. His was a great vicarious gift in behalf of all who would ever live upon the earth.</p>
+            <p>We solemnly testify that His life, which is central to all human history, neither began in Bethlehem nor concluded on Calvary. He was the Firstborn of the Father, the Only Begotten Son in the flesh, the Redeemer of the world.</p>
+            <p>He rose from the grave to “become the firstfruits of them that slept” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/1-cor/15.20?lang=eng#p20">1 Corinthians 15:20</a>). As Risen Lord, He visited among those He had loved in life. He also ministered among His “other sheep” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/john/10.16?lang=eng#p16">John 10:16</a>) in ancient America. In the modern world, He and His Father appeared to the boy Joseph Smith, ushering in the long-promised “dispensation of the fulness of times” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/eph/1.10?lang=eng#p10">Ephesians 1:10</a>).</p>
+            <p>Of the Living Christ, the Prophet Joseph wrote: “His eyes were as a flame of fire; the hair of his head was white like the pure snow; his countenance shone above the brightness of the sun; and his voice was as the sound of the rushing of great waters, even the voice of Jehovah, saying:</p>
+            <p>“I am the first and the last; I am he who liveth, I am he who was slain; I am your advocate with the Father” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110.3-4?lang=eng#p3">D&C 110:3–4</a>).</p>
+            <p>Of Him the Prophet also declared: “And now, after the many testimonies which have been given of him, this is the testimony, last of all, which we give of him: That he lives!</p>
+            <p>“For we saw him, even on the right hand of God; and we heard the voice bearing record that he is the Only Begotten of the Father—</p>
+            <p>“That by him, and through him, and of him, the worlds are and were created, and the inhabitants thereof are begotten sons and daughters unto God” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76.22-24?lang=eng#p22">D&C 76:22–24</a>).</p>
+            <p>We declare in words of solemnity that His priesthood and His Church have been restored upon the earth—“built upon the foundation of … apostles and prophets, Jesus Christ himself being the chief corner stone” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/eph/2.20?lang=eng#p20">Ephesians 2:20</a>).</p>
+            <p>We testify that He will someday return to earth. “And the glory of the Lord shall be revealed, and all flesh shall see it together” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/ot/isa/40.5?lang=eng#p5">Isaiah 40:5</a>). He will rule as King of Kings and reign as Lord of Lords, and every knee shall bend and every tongue shall speak in worship before Him. Each of us will stand to be judged of Him according to our works and the desires of our hearts.</p>
+            <p>We bear testimony, as His duly ordained Apostles—that Jesus is the Living Christ, the immortal Son of God. He is the great King Immanuel, who stands today on the right hand of His Father. He is the light, the life, and the hope of the world. His way is the path that leads to happiness in this life and eternal life in the world to come. God be thanked for the matchless gift of His divine Son.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="sacrament" class="desc-container">
+          <div class="desc-title">Sacrament</div>
+          <div class="gradient-top"></div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/sacrament.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>On the night before His Crucifixion, Jesus Christ met with His Apostles and instituted the sacrament (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/22.19-20?lang=eng#p19">Luke 22:19–20</a>). After His Resurrection, He instituted the sacrament among the Nephites (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/18.1-11?lang=eng#p1">3 Nephi 18:1–11</a>). Today the sacrament is an ordinance in which Church members partake of bread and water in remembrance of Jesus Christ’s atoning sacrifice. This ordinance is an essential part of worship and spiritual development. Through this ordinance, Church members renew the covenants they made with God when they were baptized.</p>
+            <p>When He instituted the sacrament, Jesus Christ said, “This is my body which is given for you: this do in remembrance of me. … This cup is the new testament in my blood, which is shed for you” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/22.19-20?lang=eng#p19">Luke 22:19–20</a>). The sacrament provides an opportunity for Church members to ponder and remember with gratitude the life, ministry, and Atonement of the Son of God. The broken bread is a reminder of His body and His physical suffering﻿—especially His suffering on the cross. It is also a reminder that through His mercy and grace, all people will be resurrected and given the opportunity for eternal life with God.</p>
+            <p>The water is a reminder that the Savior shed His blood in intense spiritual suffering and anguish, beginning in the Garden of Gethsemane and concluding on the cross. In the garden He said, “My soul is exceeding sorrowful, even unto death” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/nt/matt/26.38?lang=eng#p38">Matthew 26:38</a>). Submitting to the will of the Father, He suffered more than we can comprehend: “Blood [came] from every pore, so great [was] his anguish for the wickedness and the abominations of his people” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3.7?lang=eng#p7">Mosiah 3:7</a>). He suffered for the sins, sorrows, and pains of all people, providing remission of sins for those who repent and live the gospel (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/9.21-23?lang=eng#p21">2 Nephi 9:21–23</a>). Through the shedding of His blood, Jesus Christ saved all people from what the scriptures call the “original guilt” of Adam’s transgression (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6.54?lang=eng#p54">Moses 6:54</a>).</p>
+            <p>Partaking of the sacrament is a witness to God that the remembrance of His Son will extend beyond the short time of that sacred ordinance. Part of this ordinance is a promise to remember Him always and a witness of individual willingness to take upon oneself the name of Jesus Christ and to keep His commandments. In partaking of the sacrament and making these commitments, Church members renew the covenant they made at baptism (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18.8-10?lang=eng#p8">Mosiah 18:8–10</a>; <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20.37?lang=eng#p37">Doctrine and Covenants 20:37</a>).</p>
+            <p>In return, the Lord renews the promised remission of sin and enables Church members to “always have his Spirit to be with them” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20.77?lang=eng#p77">Doctrine and Covenants 20:77</a>). The Spirit’s constant companionship is one of the greatest gifts of mortality.</p>
+            <p>In preparation for the sacrament each week, Church members take time to examine their lives and repent of sins. They do not need to be perfect in order to partake of the sacrament, but they should have a spirit of humility and repentance in their hearts. Every week they strive to prepare for that sacred ordinance with a broken heart and a contrite spirit (see <a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/9.20?lang=eng#p20">3 Nephi 9:20</a>).</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="music-in-worship" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Music in our Worship</div>
+          <iframe class="youtube-video tall-vid" src="https://www.youtube.com/embed/BCycYuJ12e8?enablejsapi=1" allowfullscreen></iframe>
+          <div class="desc-text">
+            <p>Shortly after the organization of the Church in 1830, the Lord, through the Prophet Joseph Smith, commanded Emma Smith to make a selection of sacred hymns for the Saints. This was the first word of instruction concerning music in the restored church. In this revelation the Lord also made two significant statements about music: “… my soul delighteth in the song of the heart …” and “… the song of the righteous is a prayer unto me, and it shall be answered with a blessing upon their heads.” (<a target="_blank" class=scripture-ref href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/25.12?lang=eng#p12">D&C 25:12</a>.) On the basis of these two statements, it is evident that music should have a great role in the Church.</p>
+            <p>The Prophet Joseph himself organized the first choir in the Church and consistently attended its practices. He maintained that man of himself is an instrument of music and that whether the music is produced by the human voice or an instrument, it arrests his attention and absorbs his whole being. He recommended that the Saints cultivate as high a state of perfection in their musical endeavors as possible.</p>
+            <p>Those who have listened to music understand well the impact it can have on the mind and spirit. Positive, uplifting music can bring feelings of happiness and peace. The hymns of the Church are a key part of worship and invite the Spirit of the Lord. They can be especially helpful in controlling one’s thoughts. In contrast, unwholesome, negative music can encourage inappropriate thoughts and behavior. As with other forms of media, Church members are encouraged to be careful in their choice of music.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="sacrament-meeting" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">What happens during Sacrament Meeting?</div>
+          <div class="desc-text">
+            <p>Latter-day Saints welcome all visitors to their worship services, and for individuals visiting for the first time, the following information might be helpful.</p>
+            <p>Along with activities and programs during the week, Latter-day Saints gather on Sundays for an approximately hour-long “sacrament” meeting, where men, women and younger members offer prayers and give sermons, sing hymns and partake of the sacrament (similar to receiving communion). In addition, there are doctrinal and scriptural classes for youth and adults as part of the two-hour span.</p>
+            <p>Latter-day Saints are generally a friendly people, so a visitor should not be surprised when someone, seeing a new face, comes over to talk and offers to shake hands and help the visitor find the right meeting or class.</p>
+            <p>For more information, <a target="_blank" href="https://newsroom.churchofjesuschrist.org/article/what-to-expect-at-church-services">Click Here</a></p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="melchizedek-priesthood-restoration" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Melchizedek Priesthood Restoration</div>
+          <img src="./assets/images/infospots/melchizedek_priesthood_restoration.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>When Jesus Christ was on the earth, He established His Church and gave His Apostles the priesthood, which is the power to act in His name (see <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/9.1-2?lang=eng#p1">Luke 9:1–2)</a>. After His Crucifixion and the death of His Apostles, priesthood authority and the fulness of the gospel were taken from the earth because of wickedness and a rejection of the truth (see <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/2-thes/2.1-3?lang=eng#p1">2 Thessalonians 2:1–3)</a>.</p>
+            <p>In the early 1800s, Heavenly Father and Jesus Christ restored the gospel to the earth through the Prophet Joseph Smith. This Restoration included the restoration of priesthood power and authority</p>
+            <p>While Joseph Smith and Oliver Cowdery were working on the translation of the Book of Mormon, they read about baptism for the remission of sins. On May 15, 1829, they went to a wooded area near Joseph’s home in Harmony, Pennsylvania, and prayed about what they had learned.</p>
+            <p>In answer to their prayer, John the Baptist, under the direction of the Lord Jesus Christ, appeared and conferred upon them the Aaronic Priesthood, saying, “Upon you my fellow servants, in the name of Messiah I confer the Priesthood of Aaron, which holds the keys of the ministering of angels, and of the gospel of repentance, and of baptism by immersion for the remission of sins” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/13?lang=eng">Doctrine and Covenants 13:1</a>). Following John’s instructions, Joseph and Oliver then baptized each other and ordained each other to the Aaronic Priesthood (see <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1.68-72?lang=eng#p68">Joseph Smith﻿—History 1:68–72</a>.)</p>
+            <p>Sometime after John the Baptist’s appearance, the ancient Apostles Peter, James, and John also appeared to Joseph and Oliver, again under the direction of Jesus Christ, and conferred upon them the Melchizedek Priesthood (see <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/128.20?lang=eng#p20">Doctrine and Covenants 128:20</a>). “The Melchizedek Priesthood holds the right of presidency, and has power and authority over all the offices in the church in all ages of the world, to administer in spiritual things” (<a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107.8?lang=eng#p8">Doctrine and Covenants 107:8</a>). With this authority again on the earth, the Church of Jesus Christ could be restored in its fulness.</p>
+            <p>As part of the continuing restoration, additional priesthood keys were restored on April 3, 1836. The ancient prophets Moses, Elias, and Elijah appeared to Joseph Smith and Oliver Cowdery in the Kirtland Temple and committed the keys of their dispensations to them. Moses brought the keys of the gathering of Israel. Elias restored the keys of the gospel of Abraham. Elijah brought the sealing keys, which make it possible for families to be sealed together forever. (See <a class=scripture-ref target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110?lang=eng">Doctrine and Covenants 110</a>.)</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="family-history" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Family History</div>
+          <img src="./assets/images/infospots/familysearch.jpg">
+          <div class="desc-text">
+            <p>Families are central to Heavenly Father’s plan of happiness. He has prepared a way for family relationships to continue throughout eternity. By participating in temple and family history service, we discover more about ourselves and our ancestors and connect with them by performing needed gospel ordinances.</p>
+            <p>As we help our deceased family members, we can increase the influence of the Spirit in our lives and deepen our testimonies of the plan of salvation and the Lord Jesus Christ.</p>
+            <p>Our local Temple and Family History Consultants are more than happy to help you with your family history!</p>
+            <p>If you want to find out more and reach out to us, you can call<br><strong>(03) 9801 5980</strong> or <a target="_blank" href="https://www.churchofjesuschrist.org/study/manual/families-and-temples?lang=eng">Click here</a> to find out more.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="mary-and-the-resurrected-christ" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Mary and the Resurrected Christ</div>
+          <img src="./assets/images/infospots/mary_and_the_resurrected_christ.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>It was the third day since Christ’s crucifixion. Because of the Sabbath, Mary Magdalene had been unable prepare Christ’s body for a proper burial. So she waited patiently, obediently—yearning to serve her departed Master. As soon as she was able, Mary anxiously made her way to her Savior’s tomb. The morning was still dark, its darkness settling on her weary and grief-torn heart. When she arrived, the stone was rolled away. Mary flew to the sepulcher, but when she peered into the darkness, her worst fears were confirmed—it was empty. Her Master was gone.</p>
+            <p>In despair, Mary ran to the disciples and told them, “They have taken away the Lord out of the sepulchre, and we know not where they have laid him” (<a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.2?lang=eng#p1">John 20:2</a>).</p>
+            <p>Peter and John immediately ran to the tomb, leaving Mary to follow. There they saw the evidence of Mary’s words: the stone rolled back, the empty tomb, the linen clothes wrapped together and placed inside. They believed Mary’s words, and then they went away again. But Mary stayed.</p>
+            <p>She stood outside the tomb weeping—lost, alone, her hope as empty as her Lord’s final resting place. Perhaps unwilling to believe it, perhaps hoping that she and the others had seen wrong, she stooped once more to look into the darkness.</p>
+            <p>But this time it was not empty, and there, sitting where Christ’s body had lain, were two angels.</p>
+            <p>“Woman, why weepest thou?” they said (<a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.13?lang=eng#p12">John 20:13</a>).</p>
+            <p>“They have taken away my Lord, and I know not where they have laid him,” she responded, her worry evident in her words (<a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.13?lang=eng#p12">John 20:13</a>).</p>
+            <p>She then turned—perhaps not knowing why—to look behind her. But the presence she sensed was only the gardener. And He spoke to her, “Woman, why weepest thou? Whom seekest thou?” (<a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.15?lang=eng#p14">John 20:15</a>).</p>
+            <p>Desperate words fell from her mouth as she pled, “Sir, if thou have borne him hence, tell me where thou hast laid him, and I will take him away” (<a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.15?lang=eng#p14">John 20:15</a>).</p>
+            <p>And “Jesus saith unto her, Mary” (<a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.16?lang=eng#p15">John 20:16</a>).</p>
+            <p>At the all-loving utterance of her name, Mary’s eyes were opened, and she no longer saw a gardener before her. “<em>Rabboni</em>, My Master!” was her heartfelt reply (see <a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/nt/john/20.16?lang=eng#p15">John 20:16</a>).</p>
+            <p>What light and peace must have filled her soul! Her pain and grief was lifted, her joy flooded in, and her hope was restored.</p>
+            <p>Like Mary, we too have our dark moments of despair. We feel abandoned; we feel an emptiness in our hearts and think that our Savior has left us. But like Mary, we can persistently seek Him. Even after Christ had been crucified, Mary eagerly went to serve Him. Even when faced with the emptiness of the tomb, Mary stayed and sought Him out. Even in her most hopeless moments, Mary hoped.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="jesus-the-christ" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Jesus the Christ</div>
+          <img src="./assets/images/infospots/jesus_christ.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>Jesus Christ is the center of our lives. He is the chief cornerstone of The Church of Jesus Christ of Latter Day Saints. He is the greatest Being to be born on this earth—our perfect example. He is Lord of lords, the Creator, our Savior, and He came to earth so that we could live with God again.</p>
+            <p>There is so much to talk about Christ, and we cannot cover it all in this one section. And so we invite you to start from the topic of your choice!</p>
+            <ul>
+              <li><strong><a target="_blank" href="https://www.comeuntochrist.org/beliefs/jesus-christ/following-jesus-christ">You Can Follow Jesus Christ</a></strong>: You can honor the perfect example of Jesus Christ by serving others, loving God, and keeping His commandments.</li>
+              <li><strong><a target="_blank" href="https://www.comeuntochrist.org/beliefs/jesus-christ/teachings-of-jesus">The Teachings of Jesus Christ</a></strong>: Jesus was the master teacher. Explore the many lessons that He taught, and see how they still resonate today.</li>
+              <li><strong><a target="_blank" href="https://www.comeuntochrist.org/beliefs/jesus-christ/life-of-jesus-christ">The Life of Jesus Christ</a></strong>: Learn more about Jesus Christ—where He came from, how he lived and what He means to your life.</li>
+              <li><strong><a target="_blank" href="https://www.comeuntochrist.org/beliefs/jesus-christ/mission-of-jesus-christ">The Mission of Jesus Christ</a></strong>: Jesus suffered and paid the price for our sins so that we can live with God again.</li>
+              <li><strong><a target="_blank" href="https://www.comeuntochrist.org/beliefs/jesus-christ/what-is-the-role-of-jesus-christ">The Role of Jesus Christ</a></strong>: The peace that our Heavenly Father desires for us is made possible through the sacrifice and resurrection of His Son, Jesus Christ.</li>
+              <li><strong><a target="_blank" href="https://www.comeuntochrist.org/beliefs/jesus-christ/because-of-him">Because of Him</a></strong>: Jesus did what no man could ever do. He rose from the tomb and conquered death. Because He lives, we will all live again!</li>
+            </ul>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="bishop-office" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Bishop's Office</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/leadership.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>Personal sacrifice is vital to the religious faith of members of The Church of Jesus Christ of Latter-day Saints. Members volunteer their time to serve in various positions in tens of thousands of congregations throughout the world. Their service is critical at the local level because the Church has no full-time paid clergy.</p>
+            <p> In addition to serving in the Church, bishops have their own careers and families to look after. While there is no stipulated period of service, it is common for a bishop to serve his congregation for about five years, at which time he returns to the body of the congregation or is assigned another responsibility elsewhere such as teaching a youth class, helping others find employment or even directing a choir.</p>
+            <p>A bishop has many duties. In addition to watching over all ward members, he has special responsibility to guide the ward’s young men and young women. He oversees teaching, missionary work, and spiritual growth in the ward. He is responsible to care for the poor and needy, and he oversees finances, records, and the use and security of the meetinghouse.</p>
+            <p>In these responsibilities and others, the bishop is assisted by two counselors, an executive secretary, clerks, and the leaders of other organizations in the ward. Leadership meetings are held regularly to allow the bishop and those who help him to counsel together about the well-being of ward members and to attend to their needs.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="jesus-knocking-at-the-door" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Jesus Knocking at the Door</div>
+          <img src="./assets/images/infospots/jesus_at_the_door.jpeg" class="tall-pic">
+          <div class="desc-text">
+            <p>"Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me." (<cite><a target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/rev/3.20?lang=eng#p20#20">Revelation 3:20</a></cite>)</p>
+            <p>Our Heavenly Father never gives up on us. But we must have the desire to open the door, even if it shakes the very foundation of our past beliefs and way of life. Our Father in Heaven will never take away our agency. We must seek after or desire to know our Father and His Son, Jesus Christ. There is a way by which all men can know whether or not the teachings of Jesus Christ are true. As Jesus answered the skeptics at the Feast of Tabernacles, He said, “If any man will do his will, he shall know of the doctrine, whether it be of God, or whether I speak of myself.” (<cite><a target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/nt/john/7.17?lang=eng#p17#17">John 7:17</a></cite>)</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="alma-baptizing-people" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Alma Baptizes in the Waters of Mormon</div>
+          <img src="./assets/images/infospots/alma_baptizing_people.jpeg" class="tall-pic">
+          <iframe class="youtube-video tall-vid" src="https://www.youtube.com/embed/2dz51tU3z9Y?enablejsapi=1" allowfullscreen></iframe>
+          <div class="desc-text">
+            <p><strong>From <a target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/17?lang=eng">Mosiah 17–18.</a></strong></p>
+            <p>Wicked King Noah sat with his priests and listened to the prophet Abinadi teach about Jesus Christ. Bravely, Abinadi taught about faith, repentance, and the resurrection that would come because of Jesus.</p>
+            <p>The wicked priests were angry because Abinadi said they should repent, and King Noah ordered that Abinadi should be put to death. But one priest, named Alma, listened to Abinadi and knew the things he taught were true.</p>
+            <p>Alma told King Noah to let Abinadi go. Instead, the king threw Abinadi into prison, chased Alma out of the kingdom, and sent servants to find Alma and kill him.</p>
+            <p>For many days Alma hid in the woods and wrote down everything he had heard Abinadi teach. Alma repented of his sins and then secretly taught other people about the teachings of Jesus Christ. Many people believed Alma.</p>
+            <p>The servants of King Noah were still searching for Alma, so he had to stay hidden. Alma lived in a forest far from the city. The place was called Mormon.</p>
+            <p>The people who wanted to hear more about Jesus Christ gathered together near the waters of Mormon. Alma taught them what they needed to do to be baptized. They should be willing to be called the children of God and tell people they believed in Christ. He said they should be willing to join with the other children of God and help them whenever they needed help or comfort.</p>
+            <p>To be baptized, the people also needed to promise to keep the commandments. Alma said that if they made that covenant, the Lord would pour out His Spirit more abundantly on them.</p>
+            <p>The people clapped their hands for joy and were excited to be baptized.</p>
+            <p>Alma took a man named Helam into the waters of Mormon. Alma baptized Helam, and when he arose out of the water, they were filled with the Spirit. Then Alma took each one of the people into the waters of Mormon and baptized them. He baptized about 204 people that day.</p>
+            <p>that day the people who were baptized called themselves the Church of Christ. Alma had authority from God and ordained priests to teach the people. More people joined them and were baptized.</p>
+            <p>Alma taught the people that there should be no contention among them. They should share, work together, worship together weekly, and have their hearts knit together in unity and love.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="primary" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Primary</div>
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/primary.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-text">
+            <p>Primary is for children ages 18 months through 11 years. The Primary theme is “All thy children shall be taught of the Lord; and great shall be the peace of thy children” (<a target="_blank" href="//www.churchofjesuschrist.org/scriptures/bofm/3-ne/22.13?lang=eng#12">3 Nephi 22:13</a>). The purposes of Primary are to help children:</p>
+            <ul>
+            	<li>Learn about Heavenly Father’s plan of happiness and feel His love.</li>
+            	<li>Learn about Jesus Christ and His role in Heavenly Father’s plan.</li>
+            	<li>Live the gospel.</li>
+            	<li>Feel and recognize the influence of the Holy Ghost.</li>
+            	<li>Prepare for, make, and keep sacred covenants.</li>
+            	<li>Participate in the work of salvation and exaltation.</li>
+            </ul>
+            <p>Parents have the first responsibility for the spiritual and physical welfare of their children (see <a target="_blank" href="https://www.churchofjesuschrist.org/scriptures/dc-testament/dc/68.25-28?lang=eng#24#24">Doctrine and Covenants 68:25–28</a>). The bishopric, Primary leaders, and Primary teachers support but do not replace parents in this responsibility.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="melbourne-temple" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Melbourne Temple</div>
+          <img src="./assets/images/infospots/melbourne_temple.jpg" class="tall-pic">
+          <div class="desc-text">
+            <p>Latter-day Saints are a temple-building and temple-loving people. It has been so from the earliest days of the Church. Through the Prophet Joseph Smith, the Lord declared that "my people are always commanded to build [temples] unto my holy name" <a target="_blank" href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=eng#39">(D&C 124:39-40)</a>.</p>
+            <p>In temples, we can draw closer to the Lord, we can learn more about His plan for our happiness, we can receive essential ordinances for our exaltation, and we can perform vicarious service on behalf of those who have died without the gospel of Jesus Christ. The culminating blessing of the temple is that we can be joined together as families for eternity, so that our relationships with those we love will last forever.</p>
+            <p>For more information about temples, <a target="_blank" href="https://www.churchofjesuschrist.org/temples/why-latter-day-saints-build-temples?lang=eng">Click here</a>, or visit <a target="_blank" href="https://www.churchofjesuschrist.org/temples?lang=eng">temple.churchofjesuschrist.org</a></p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="angel-moroni" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Angel Moroni</div>
+          <img src="./assets/images/infospots/angel_moroni_melbourne_australia_temple.jpeg" alt="" class="tall-pic">
+          <div class="desc-text">
+            <p>Moroni was a prophet in the Book of Mormon. He played a significant role in the life of Joseph Smith, the first prophet and president of The Church of Jesus Christ of Latter-day Saints. The placement of a statue of Moroni blowing a trumpet atop many temples is a symbol of the Church’s mission to preach the gospel of Jesus Christ to the world.</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="temple-dedication" class="desc-container">
+          <div class="gradient-top"></div>
+          <div class="desc-title">Temple Dedication</div>
+          <img src="./assets/images/infospots/erected_2000.JPG" class="tall-pic">
+          <div class="desc-text">
+            <p>The Melbourne Australia Temple is the 90th Temple dedicated. It was dedicated by President Gordon B. Hinckley on June 16, 2000.</p>
+            <p>When President Hinckley dedicated the temple, he left a blessing on Australia. He said, "Bless this land that it may remain ever strong, a nation of peace and progress among the nations of the earth."</p>
+          </div>
+          <div class="gradient-btm"></div>
+        </div>
+
+        <div id="my-soul-hungered" class="desc-container">
+          <video class="video" controls>
+            <source src="./assets/videos/chapeltour/my_soul_hungered.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="desc-title">My Soul Hungered</div>
+          <div class="desc-text" style="text-align: center;">Enjoy this music video by our missionaries!</div>
+          </div>
+        <div id="come-and-see" class="desc-container">
+          <img src="./assets/images/infospots/temple_sideporch_flowerbed.jpg" class="sticky tall-pic">
+          <div class="gradient-top sticky tall-pic"></div>
+          <div class="desc-title">Come and See!</div>
+          <div class="desc-text">We invite you to reach out to your friends from the church, or to our missionaries, to come and see! The temple grounds are a special and peaceful place that are open to all to stroll and feel the calm that emanates from the temple.</div>
+          <div class="gradient-btm"></div>
+        </div>
+
+
+
+        <img id="close-btn" src="./assets/icons/cross.png" onclick="closeInfospotDesc()"></img>
+      </div>
+    </div>
+    
+    
+
+
+
+
+    <script>
+      // #PROGRESS BAR SETUP
+      var progressElement = document.getElementById('progress-bar');
+      var loadingBlockerElement = document.getElementById('loading-blocker');
+
+      function onEnter(event) {
+        progressElement.style.width = "5%";
+        progressElement.classList.remove('finish');
+        loadingBlockerElement.classList.remove('finish');
+        // console.log("onEnter");
+      }
+
+      function onProgress(event) {
+        progress = Math.max(0.15, event.progress.loaded / event.progress.total * 100);
+        progressElement.style.width = Math.min(progress, 99) + '%';
+        // console.log("onProgress");
+      }
+      
+      // function onEnterComplete(event) {
+      //   console.log("onEnterComplete");
+      // }
+
+      function onEnterFadeComplete(event) {
+        progressElement.style.width = "100%";
+        progressElement.classList.add('finish');
+        loadingBlockerElement.classList.add('finish');
+        // console.log("OnEnterFadeComplete");
+      }
+
+
+
+
+      // #Info card
+      var infoCardAction;
+      function closeInfoCard() {
+        document.getElementById("info-card").style.width = "37px";
+      }
+
+      function openInfoCard(infoText) {
+        infoCardAction = infoText;
+        var infoCardElement = document.getElementById("info-card");
+        infoCardElement.innerHTML = "&nbsp;&nbsp;&#9432;&nbsp;&nbsp;&nbsp;" + infoText + "&nbsp;&nbsp;&nbsp;";
+        var isFirstPrompt = (infoCardElement.clientWidth == 0);
+        infoCardElement.style.width = "auto";
+        var formattedWidth = Math.ceil(infoCardElement.clientWidth) + "px"; 
+        infoCardElement.style.width = isFirstPrompt ? "0px" : "37px";
+        setTimeout(function(){infoCardElement.style.width = formattedWidth;}, 0);
+
+        setTimeout(function(){closeInfoCard();}, 10000);
+      }
+
+      function infoCardOnClick() {
+        // TODO: Implement this!
+        console.log(infoCardAction);
+      }
+
+      
+
+
+      // #Set up the pannos
+      const pano_entryway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/entryway.jpg')
+      const pano_mission_office = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/mission_office.jpg');
+      const pano_lobby = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/lobby.jpg')
+      const pano_lobby_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/lobby_linkway.jpg')
+      const pano_cultural_hall = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/cultural_hall.jpg')
+      const pano_chapel_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/chapel_linkway.jpg')
+      const pano_chapel = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/chapel.jpg')
+      const pano_lower_lobby_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/lower_lobby_linkway.jpg')
+      const pano_lower_central_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/lower_central_linkway.jpg')
+      const pano_lower_chapel_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/lower_chapel_linkway.jpg')
+      const pano_baptismal_room = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/baptismal_room.jpg')
+      const pano_upper_lobby_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/upper_lobby_linkway.jpg')
+      const pano_upper_central_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/upper_central_linkway.jpg')
+      const pano_upper_chapel_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/upper_chapel_linkway.jpg')
+      const pano_temple_front = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/temple_front.jpg')
+      const pano_temple_linkway = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/temple_linkway.jpg')
+      const pano_temple_sideporch = new PANOLENS.ImagePanorama('./assets/textures/maroondah-equirectangular/temple_sideporch.jpg')
+      pano_entryway.addEventListener('enter', onEnter);
+      pano_entryway.addEventListener('progress', onProgress);
+      // pano_entryway.addEventListener('enter-complete', onEnterComplete);
+      pano_entryway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_mission_office.addEventListener('enter', onEnter);
+      pano_mission_office.addEventListener('progress', onProgress);
+      // pano_mission_office.addEventListener('enter-complete', onEnterComplete);
+      pano_mission_office.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_lobby.addEventListener('enter', onEnter);
+      pano_lobby.addEventListener('progress', onProgress);
+      // pano_lobby.addEventListener('enter-complete', onEnterComplete);
+      pano_lobby.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_lobby_linkway.addEventListener('enter', onEnter);
+      pano_lobby_linkway.addEventListener('progress', onProgress);
+      // pano_lobby_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_lobby_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_cultural_hall.addEventListener('enter', onEnter);
+      pano_cultural_hall.addEventListener('progress', onProgress);
+      // pano_cultural_hall.addEventListener('enter-complete', onEnterComplete);
+      pano_cultural_hall.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_chapel_linkway.addEventListener('enter', onEnter);
+      pano_chapel_linkway.addEventListener('progress', onProgress);
+      // pano_chapel_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_chapel_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_chapel.addEventListener('enter', onEnter);
+      pano_chapel.addEventListener('progress', onProgress);
+      // pano_chapel.addEventListener('enter-complete', onEnterComplete);
+      pano_chapel.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_lower_lobby_linkway.addEventListener('enter', onEnter);
+      pano_lower_lobby_linkway.addEventListener('progress', onProgress);
+      // pano_lower_lobby_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_lower_lobby_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_lower_central_linkway.addEventListener('enter', onEnter);
+      pano_lower_central_linkway.addEventListener('progress', onProgress);
+      // pano_lower_central_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_lower_central_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_lower_chapel_linkway.addEventListener('enter', onEnter);
+      pano_lower_chapel_linkway.addEventListener('progress', onProgress);
+      // pano_lower_chapel_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_lower_chapel_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_baptismal_room.addEventListener('enter', onEnter);
+      pano_baptismal_room.addEventListener('progress', onProgress);
+      // pano_baptismal_room.addEventListener('enter-complete', onEnterComplete);
+      pano_baptismal_room.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_upper_lobby_linkway.addEventListener('enter', onEnter);
+      pano_upper_lobby_linkway.addEventListener('progress', onProgress);
+      // pano_upper_lobby_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_upper_lobby_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_upper_central_linkway.addEventListener('enter', onEnter);
+      pano_upper_central_linkway.addEventListener('progress', onProgress);
+      // pano_upper_central_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_upper_central_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_upper_chapel_linkway.addEventListener('enter', onEnter);
+      pano_upper_chapel_linkway.addEventListener('progress', onProgress);
+      // pano_upper_chapel_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_upper_chapel_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_temple_front.addEventListener('enter', onEnter);
+      pano_temple_front.addEventListener('progress', onProgress);
+      // pano_temple_front.addEventListener('enter-complete', onEnterComplete);
+      pano_temple_front.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_temple_linkway.addEventListener('enter', onEnter);
+      pano_temple_linkway.addEventListener('progress', onProgress);
+      // pano_temple_linkway.addEventListener('enter-complete', onEnterComplete);
+      pano_temple_linkway.addEventListener('enter-fade-complete', onEnterFadeComplete);
+      pano_temple_sideporch.addEventListener('enter', onEnter);
+      pano_temple_sideporch.addEventListener('progress', onProgress);
+      // pano_temple_sideporch.addEventListener('enter-complete', onEnterComplete);
+      pano_temple_sideporch.addEventListener('enter-fade-complete', onEnterFadeComplete);
+
+
+
+      
+
+
+
+
+      // #Set up the links between panoramas.
+      var linkScale = 300;
+      if (window.innerWidth <= 350) linkScale = 700;
+      else if (window.innerWidth <= 768) linkScale = 500;
+      pano_entryway.link(pano_temple_front, new THREE.Vector3(-80.16, -11.57, -4995.34), linkScale);
+      pano_entryway.link(pano_chapel_linkway, new THREE.Vector3(4061.58, 319.81, -2890.49), linkScale);
+
+      pano_mission_office.link(pano_lobby, new THREE.Vector3(4839.64, -945.57, 761.70), linkScale);
+
+      pano_lobby.link(pano_mission_office, new THREE.Vector3(-4861.53, -1039.62, -490.47), linkScale);
+      pano_lobby.link(pano_lobby_linkway, new THREE.Vector3(1379.39, -1220.32, 4641.37), linkScale);
+      pano_lobby.link(pano_temple_front, new THREE.Vector3(-212.21, -492.12, -4961.65), linkScale);
+
+      pano_lobby_linkway.link(pano_lobby, new THREE.Vector3(-1741.13, -1043.26, -4558.63), linkScale);
+      pano_lobby_linkway.link(pano_lower_lobby_linkway, new THREE.Vector3(4019.67, -1416.36, -2595.92), linkScale);
+      pano_lobby_linkway.link(pano_upper_lobby_linkway, new THREE.Vector3(4882.25, 279.71, -1022.98), linkScale);
+      pano_lobby_linkway.link(pano_chapel_linkway, new THREE.Vector3(1093.98, -1197.62, 4724.47), linkScale);
+      pano_lobby_linkway.link(pano_cultural_hall, new THREE.Vector3(-2225.16, -795.25, 4398.26), linkScale);
+
+      pano_cultural_hall.link(pano_lobby_linkway, new THREE.Vector3(4264.05, -40.95, -2598.80), linkScale);
+
+      pano_chapel_linkway.link(pano_lower_chapel_linkway, new THREE.Vector3(4884.80, -792.50, -671.00), linkScale);
+      pano_chapel_linkway.link(pano_upper_chapel_linkway, new THREE.Vector3(4716.53, 561.57, -1547.26), linkScale);
+      pano_chapel_linkway.link(pano_lobby_linkway, new THREE.Vector3(1958.59, -734.38, -4536.76), linkScale);
+      pano_chapel_linkway.link(pano_chapel, new THREE.Vector3(-4797.07, -832.83, 1112.75), linkScale);
+      pano_chapel_linkway.link(pano_entryway, new THREE.Vector3(485.64, -434.20, 4954.18), linkScale);
+
+      pano_chapel.link(pano_chapel_linkway, new THREE.Vector3(4330.76, -249.14, -2477.22), linkScale);
+
+      pano_lower_chapel_linkway.link(pano_chapel_linkway, new THREE.Vector3(-4123.98, -71.23, 2812.30), linkScale);
+      pano_lower_chapel_linkway.link(pano_lower_central_linkway, new THREE.Vector3(128.52, -483.74, -4967.03), linkScale);
+
+      pano_lower_central_linkway.link(pano_lower_chapel_linkway, new THREE.Vector3(-54.01, -664.14, 4949.58), linkScale);
+      pano_lower_central_linkway.link(pano_baptismal_room, new THREE.Vector3(4193.00, -1439.56, 2296.30), linkScale);
+      pano_lower_central_linkway.link(pano_baptismal_room, new THREE.Vector3(4245.83, -1324.21, -2264.17), linkScale);
+      pano_lower_central_linkway.link(pano_lower_lobby_linkway, new THREE.Vector3(-205.76, -904.82, -4903.26), linkScale);
+
+      pano_lower_lobby_linkway.link(pano_lower_central_linkway, new THREE.Vector3(868.74, -1281.90, 4745.41), linkScale);
+      pano_lower_lobby_linkway.link(pano_lobby_linkway, new THREE.Vector3(-4852.19, -116.01, -1165.82), linkScale);
+
+      pano_baptismal_room.link(pano_lower_central_linkway, new THREE.Vector3(-4442.39, -863.15, -2108.84), linkScale);
+      pano_baptismal_room.link(pano_lower_central_linkway, new THREE.Vector3(-3883.14, -885.40, 3008.64), linkScale);
+
+      pano_upper_lobby_linkway.link(pano_lobby_linkway, new THREE.Vector3(-4494.88, -2127.14, 480.30), linkScale);
+      pano_upper_lobby_linkway.link(pano_upper_central_linkway, new THREE.Vector3(214.53, -630.72, 4945.12), linkScale);
+
+      pano_upper_central_linkway.link(pano_upper_chapel_linkway, new THREE.Vector3(80.13, -539.97, 4962.91), linkScale);
+      pano_upper_central_linkway.link(pano_upper_lobby_linkway, new THREE.Vector3(-446.59, -426.10, -4957.18), linkScale);
+
+      pano_upper_chapel_linkway.link(pano_chapel_linkway, new THREE.Vector3(-4578.51, -1849.61, 731.53), linkScale);
+      pano_upper_chapel_linkway.link(pano_upper_central_linkway, new THREE.Vector3(-80.53, -359.78, -4981.64), linkScale);
+
+      pano_temple_front.link(pano_lobby, new THREE.Vector3(-687.37, 70.39, 4943.72), linkScale);
+      pano_temple_front.link(pano_temple_linkway, new THREE.Vector3(3697.75, 130.47, -3356.39), linkScale);
+      pano_temple_front.link(pano_entryway, new THREE.Vector3(-3899.09, 289.18, 3101.19), linkScale);
+
+      pano_temple_linkway.link(pano_temple_front, new THREE.Vector3(-3955.73, -14.98, 3048.33), linkScale);
+      pano_temple_linkway.link(pano_temple_sideporch, new THREE.Vector3(4938.88, -699.14, 179.11), linkScale);
+
+      pano_temple_sideporch.link(pano_temple_linkway, new THREE.Vector3(-1300.82, -314.06, 4807.98), linkScale);
+
+
+      // #Set up infospots
+      const desc_lookup = {
+        missionOffice: "desc-mission-office",
+        johnBaptizingJesus: "john-baptizing-jesus",
+        jesusChristVisitsTheAmericas: "jesus-christ-visits-the-americas",
+        theFirstVision: "the-first-vision",
+        theSecondComing: "the-second-coming",
+        reliefSociety: "relief-society",
+        sundaySchool: "sunday-school",
+        missionaryPlaques: "missionary-plaques",
+        jesusPrayingInGethsemane: "jesus-praying-in-gethsemane",
+        baptismalFont: "baptismal-font",
+        baptismForTheDead: "baptism-for-the-dead",
+        youngWomen: "young-women",
+        // culturalHallHoverCraft: "cultural-hall-hovercraft",
+        eldersQuorum: "elders-quorum",
+        basketball: "basketball",
+        christOrdainingTheApostles: "christ-ordaining-the-apostles",
+        familyProclamation: "family-proclamation",
+        theLivingChrist: "the-living-christ",
+        sacrament: "sacrament",
+        musicInWorship: "music-in-worship",
+        sacramentMeeting: "sacrament-meeting",
+        melchizedekPriesthoodRestoration: "melchizedek-priesthood-restoration",
+        familyHistory: "family-history",
+        marryAndTheResurrectedChrist: "mary-and-the-resurrected-christ",
+        jesusTheChrist: "jesus-the-christ",
+        bishopOffice: "bishop-office",
+        jesusKnockingAtTheDoor: "jesus-knocking-at-the-door",
+        almaBaptizingPeople: "alma-baptizing-people",
+        primary: "primary",
+        melbourneTemple: "melbourne-temple",
+        angelMoroni: "angel-moroni",
+        templeDedication: "temple-dedication",
+        mySoulHungered: "my-soul-hungered",
+        comeAndSee: "come-and-see",
+      }
+
+      function closeInfospotDesc() {
+        document.getElementById("desc-bg").style.height = "0%";
+        var descToHide = document.getElementById(lastOpenedInfospotID);
+        setTimeout(function(){descToHide.style.display = 'none';}, 300);
+        for (descId in desc_lookup) {
+          if (document.getElementById(desc_lookup[descId]).style.display == 'none') continue;
+          document.getElementById(desc_lookup[descId]).style.opacity = '0';
+          setTimeout(function(){document.getElementById(desc_lookup[descId]).style.display = 'none';}, 300);
+        }
+        var youtubeVideos = document.querySelectorAll(".youtube-video");
+        for (var iVideo = 0; iVideo < youtubeVideos.length; iVideo++) {
+          youtubeVideos[iVideo].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        }
+        var videos = document.querySelectorAll(".video");
+        for (var iVideo = 0; iVideo < videos.length; iVideo++) {
+          if (videos[iVideo].paused) continue;
+          videos[iVideo].load();
+          videos[iVideo].pause();
+        }
+      }
+
+      var lastOpenedInfospotID;
+      function openInfospot(infospotDescID) {
+        // console.log(infospotDescID + ' got clicked');
+        lastOpenedInfospotID = infospotDescID;
+        document.getElementById("desc-bg").style.height = "100%";
+        document.getElementById(infospotDescID).style.display = 'block';
+        document.getElementById(infospotDescID).style.opacity = '1';
+      }
+
+      var infospotScale = 300;
+      if (window.innerWidth <= 350) infospotScale = 700;
+      else if (window.innerWidth <= 768) infospotScale = 500;
+
+      var infospot_mission_office = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_mission_office.position.set(-4898.56, -392.78, 891.44);
+      infospot_mission_office.addEventListener('click', function(event){openInfospot(desc_lookup.missionOffice)});
+      pano_mission_office.add(infospot_mission_office);
+
+      var infospot_john_baptizing_jesus = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_john_baptizing_jesus.position.set(-3931.51, 105.09, 3072.62);
+      infospot_john_baptizing_jesus.addEventListener('click', function(event){openInfospot(desc_lookup.johnBaptizingJesus)});
+      pano_mission_office.add(infospot_john_baptizing_jesus);
+
+      var infospot_john_baptizing_jesus_baptismalRoom = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_john_baptizing_jesus_baptismalRoom.position.set(4834.31, 302.09, -1204.35);
+      infospot_john_baptizing_jesus_baptismalRoom.addEventListener('click', function(event){openInfospot(desc_lookup.johnBaptizingJesus)});
+      pano_lower_central_linkway.add(infospot_john_baptizing_jesus_baptismalRoom);
+
+      var infospot_jesus_christ_visits_the_americas = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_jesus_christ_visits_the_americas.position.set(2166.58, 251.54, 4488.94);
+      infospot_jesus_christ_visits_the_americas.addEventListener('click', function(event){openInfospot(desc_lookup.jesusChristVisitsTheAmericas)});
+      pano_mission_office.add(infospot_jesus_christ_visits_the_americas);
+
+      var infospot_the_first_vision = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_the_first_vision.position.set(3812.46, 227.11, 3212.03);
+      infospot_the_first_vision.addEventListener('click', function(event){openInfospot(desc_lookup.theFirstVision)});
+      pano_mission_office.add(infospot_the_first_vision);
+
+      var infospot_the_second_coming = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_the_second_coming.position.set(-4300.38, 562.85, 2480.07);
+      infospot_the_second_coming.addEventListener('click', function(event){openInfospot(desc_lookup.theSecondComing)});
+      pano_lobby.add(infospot_the_second_coming);
+
+      var infospot_relief_society = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_relief_society.position.set(-4425.46, -340.05, -2283.50);
+      infospot_relief_society.addEventListener('click', function(event){openInfospot(desc_lookup.reliefSociety)});
+      pano_lobby.add(infospot_relief_society);
+
+      var infospot_sunday_school = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_sunday_school.position.set(-4719.52, 95.22, -1627.81);
+      infospot_sunday_school.addEventListener('click', function(event){openInfospot(desc_lookup.sundaySchool)});
+      pano_lobby.add(infospot_sunday_school);
+
+      var infospot_missionary_plaques = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_missionary_plaques.position.set(3510.90, 408.74, 3525.96);
+      infospot_missionary_plaques.addEventListener('click', function(event){openInfospot(desc_lookup.missionaryPlaques)});
+      pano_lobby.add(infospot_missionary_plaques);
+
+      var infospot_jesus_praying_in_gethsemane = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_jesus_praying_in_gethsemane.position.set(3880.90, 194.30, 3129.56);
+      infospot_jesus_praying_in_gethsemane.addEventListener('click', function(event){openInfospot(desc_lookup.jesusPrayingInGethsemane)});
+      pano_lobby_linkway.add(infospot_jesus_praying_in_gethsemane);
+
+      var infospot_baptismal_font = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_baptismal_font.position.set(2076.45, -149.79, -4539.34);
+      infospot_baptismal_font.addEventListener('click', function(event){openInfospot(desc_lookup.baptismalFont)});
+      pano_baptismal_room.add(infospot_baptismal_font);
+
+      var infospot_baptism_for_the_dead = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_baptism_for_the_dead.position.set(-4980.53, -264.85, -172.97);
+      infospot_baptism_for_the_dead.addEventListener('click', function(event){openInfospot(desc_lookup.baptismForTheDead)});
+      pano_baptismal_room.add(infospot_baptism_for_the_dead);
+
+      var infospot_young_women = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_young_women.position.set(838.96, -89.77, 4918.94);
+      infospot_young_women.addEventListener('click', function(event){openInfospot(desc_lookup.youngWomen)});
+      pano_baptismal_room.add(infospot_young_women);
+
+      var infospot_cultural_hall_hovercraft = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_cultural_hall_hovercraft.position.set(-3355.33, -1080.44, 3535.32);
+      infospot_cultural_hall_hovercraft.addEventListener('click', function(event){openInfospot(desc_lookup.culturalHallHoverCraft)});
+      pano_cultural_hall.add(infospot_cultural_hall_hovercraft);
+
+      var infospot_elders_quorum = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_elders_quorum.position.set(-259.36, 501.64, -4958.05);
+      infospot_elders_quorum.addEventListener('click', function(event){openInfospot(desc_lookup.eldersQuorum)});
+      pano_cultural_hall.add(infospot_elders_quorum);
+
+      var infospot_basketball = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_basketball.position.set(-4924.74, 749.70, 334.85);
+      infospot_basketball.addEventListener('click', function(event){openInfospot(desc_lookup.basketball)});
+      pano_cultural_hall.add(infospot_basketball);
+
+      var infospot_the_second_coming_chapellinkway = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_the_second_coming_chapellinkway.position.set(4808.16, 1226.43, 572.43);
+      infospot_the_second_coming_chapellinkway.addEventListener('click', function(event){openInfospot(desc_lookup.theSecondComing)});
+      pano_chapel_linkway.add(infospot_the_second_coming_chapellinkway);
+
+      var infospot_christ_ordaining_the_apostles = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_christ_ordaining_the_apostles.position.set(-1051.79, 340.14, -4873.64);
+      infospot_christ_ordaining_the_apostles.addEventListener('click', function(event){openInfospot(desc_lookup.christOrdainingTheApostles)});
+      pano_chapel_linkway.add(infospot_christ_ordaining_the_apostles);
+
+      var infospot_family_proclamation = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_family_proclamation.position.set(2797.08, 214.78, -4127.15);
+      infospot_family_proclamation.addEventListener('click', function(event){openInfospot(desc_lookup.familyProclamation)});
+      pano_chapel_linkway.add(infospot_family_proclamation);
+
+      var infospot_the_living_christ = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_the_living_christ.position.set(2117.21, 249.10, -4514.20);
+      infospot_the_living_christ.addEventListener('click', function(event){openInfospot(desc_lookup.theLivingChrist)});
+      pano_chapel_linkway.add(infospot_the_living_christ);
+
+      var infospot_sacrament = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_sacrament.position.set(-3642.04, -921.71, 3293.20);
+      infospot_sacrament.addEventListener('click', function(event){openInfospot(desc_lookup.sacrament)});
+      pano_chapel.add(infospot_sacrament);
+
+      var infospot_music_in_worship = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_music_in_worship.position.set(-909.67, 434.36, 4890.69);
+      infospot_music_in_worship.addEventListener('click', function(event){openInfospot(desc_lookup.musicInWorship)});
+      pano_chapel.add(infospot_music_in_worship);
+
+      var infospot_sacrament_meeting = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_sacrament_meeting.position.set(-151.99, -1167.62, 4853.77);
+      infospot_sacrament_meeting.addEventListener('click', function(event){openInfospot(desc_lookup.sacramentMeeting)});
+      pano_chapel.add(infospot_sacrament_meeting);
+
+      var infospot_melchizedek_priesthood_restoration = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_melchizedek_priesthood_restoration.position.set(4905.00, 944.55, 21.86);
+      infospot_melchizedek_priesthood_restoration.addEventListener('click', function(event){openInfospot(desc_lookup.melchizedekPriesthoodRestoration)});
+      pano_lower_lobby_linkway.add(infospot_melchizedek_priesthood_restoration);
+
+      var infospot_family_history = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_family_history.position.set(-797.90, -1296.26, -4752.54);
+      infospot_family_history.addEventListener('click', function(event){openInfospot(desc_lookup.familyHistory)});
+      pano_lower_lobby_linkway.add(infospot_family_history);
+
+      var infospot_mary_and_the_resurrected_christ = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_mary_and_the_resurrected_christ.position.set(3988.98, 310.98, -2988.82);
+      infospot_mary_and_the_resurrected_christ.addEventListener('click', function(event){openInfospot(desc_lookup.marryAndTheResurrectedChrist)});
+      pano_chapel_linkway.add(infospot_mary_and_the_resurrected_christ);
+
+      var infospot_jesus_the_christ = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_jesus_the_christ.position.set(1546.26, 279.71, 4743.07);
+      infospot_jesus_the_christ.addEventListener('click', function(event){openInfospot(desc_lookup.jesusTheChrist)});
+      pano_upper_chapel_linkway.add(infospot_jesus_the_christ);
+
+      var infospot_bishop_office = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_bishop_office.position.set(-1054.39, -301.48, 4874.52);
+      infospot_bishop_office.addEventListener('click', function(event){openInfospot(desc_lookup.bishopOffice)});
+      pano_upper_chapel_linkway.add(infospot_bishop_office);
+
+      var infospot_jesus_knocking_at_the_door = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_jesus_knocking_at_the_door.position.set(4834.87, 469.99, 1153.11);
+      infospot_jesus_knocking_at_the_door.addEventListener('click', function(event){openInfospot(desc_lookup.jesusKnockingAtTheDoor)});
+      pano_upper_central_linkway.add(infospot_jesus_knocking_at_the_door);
+
+      var infospot_alma_baptizing_people = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_alma_baptizing_people.position.set(4199.34, 1344.82, 2342.63);
+      infospot_alma_baptizing_people.addEventListener('click', function(event){openInfospot(desc_lookup.almaBaptizingPeople)});
+      pano_upper_lobby_linkway.add(infospot_alma_baptizing_people);
+
+      var infospot_primary = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_primary.position.set(2263.51, -380.89, -4433.85);
+      infospot_primary.addEventListener('click', function(event){openInfospot(desc_lookup.primary)});
+      pano_lower_chapel_linkway.add(infospot_primary);
+
+      var infospot_melbourne_temple = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_melbourne_temple.position.set(258.51, 1571.83, -4731.87);
+      infospot_melbourne_temple.addEventListener('click', function(event){openInfospot(desc_lookup.melbourneTemple)});
+      pano_temple_front.add(infospot_melbourne_temple);
+
+      var infospot_angel_moroni = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_angel_moroni.position.set(-1128.42, 2322.54, -4273.06);
+      infospot_angel_moroni.addEventListener('click', function(event){openInfospot(desc_lookup.angelMoroni)});
+      pano_temple_front.add(infospot_angel_moroni);
+
+      var infospot_temple_dedication = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_temple_dedication.position.set(-94.06, 100.51, -4991.12);
+      infospot_temple_dedication.addEventListener('click', function(event){openInfospot(desc_lookup.templeDedication)});
+      pano_temple_linkway.add(infospot_temple_dedication);
+
+      var infospot_my_soul_hungered = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_my_soul_hungered.position.set(-4749.27, -1077.03, 1103.71);
+      infospot_my_soul_hungered.addEventListener('click', function(event){openInfospot(desc_lookup.mySoulHungered)});
+      pano_temple_sideporch.add(infospot_my_soul_hungered);
+
+      var infospot_come_and_see = new PANOLENS.Infospot(infospotScale, PANOLENS.DataImage.Info);
+      infospot_come_and_see.position.set(4869.46, -1068.51, 229.47);
+      infospot_come_and_see.addEventListener('click', function(event){openInfospot(desc_lookup.comeAndSee)});
+      pano_temple_sideporch.add(infospot_come_and_see);
+
+
+
+
+
+
+
+
+
+      // #Set up the viewer itself
+      const viewer = new PANOLENS.Viewer({
+        // output: 'console', // Whether and where to output raycast position. Could be 'console' or 'overlay'
+        autoHideInfospot: false, // Auto hide infospots when click on non-active area
+        horizontalView: true, // Allow only horizontal camera control
+        controlButtons: [''], // Button names to mount on controlBar if controlBar exists, Defaults to ['fullscreen', 'setting', 'video']
+        cameraFov: 85, // Camera field of view value
+        clickTolerance: 20, // Distance tolerance to tigger click / tap event
+        });
+      viewer.add(pano_entryway);
+      viewer.add(pano_mission_office);
+      viewer.add(pano_lobby);
+      viewer.add(pano_lobby_linkway);
+      viewer.add(pano_cultural_hall);
+      viewer.add(pano_chapel_linkway);
+      viewer.add(pano_chapel);
+      viewer.add(pano_lower_lobby_linkway);
+      viewer.add(pano_lower_central_linkway);
+      viewer.add(pano_lower_chapel_linkway);
+      viewer.add(pano_baptismal_room);
+      viewer.add(pano_upper_lobby_linkway);
+      viewer.add(pano_upper_central_linkway);
+      viewer.add(pano_upper_chapel_linkway);
+      viewer.add(pano_temple_front);
+      viewer.add(pano_temple_linkway);
+      viewer.add(pano_temple_sideporch);
+
+      viewer.getControl().rotateLeft(-0.85); // This uses radians.
+      viewer.OrbitControls.noZoom = true; // Disable FOV zoom.
+
+      var container = document.getElementById("container");
+      container.appendChild(viewer.getContainer());
+
+
+      // #functions to jump to panorama
+      var panoSwitcherContainer = document.getElementById("pano-switch-container");
+      function jumpToPanoLobby() {
+        viewer.setPanorama(pano_lobby);
+        viewer.tweenControlCenter(new THREE.Vector3(-4401.56, -5.07, 2359.37));
+        deactivatePanoSwitcher();
+      }
+
+      function jumpToPanoChapel() {
+        viewer.setPanorama(pano_chapel);
+        viewer.tweenControlCenter(new THREE.Vector3(-1879.70, -105.12, 4622.42));
+        deactivatePanoSwitcher();
+      }
+      
+      function jumpToPanoBaptismal() {
+        viewer.setPanorama(pano_baptismal_room);
+        viewer.tweenControlCenter(new THREE.Vector3(-42.46, -373.16, -4983.11));
+        deactivatePanoSwitcher();
+      }
+
+      function jumpToPanoCulturalHall() {
+        viewer.setPanorama(pano_cultural_hall);
+        viewer.tweenControlCenter(new THREE.Vector3(3023.63, 303.14, -3961.19));
+        deactivatePanoSwitcher();
+      }
+
+      function jumpToPanoTemple() {
+        viewer.setPanorama(pano_temple_front);
+        viewer.tweenControlCenter(new THREE.Vector3(-819.85, 364.50, -4911.06));
+        deactivatePanoSwitcher();
+      }
+
+      var panoSwitcherActivated = false;
+      function panoSwictherOnTap(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (panoSwitcherActivated) {
+          deactivatePanoSwitcher();
+        } else {
+          activatePanoSwitcher();
+        }
+      }
+      function activatePanoSwitcher() {
+          panoSwitcherContainer.style.visibility = "visible";
+          panoSwitcherContainer.style.opacity = 1;
+          panoSwitcherActivated = true;
+      }
+      function deactivatePanoSwitcher() {
+          panoSwitcherContainer.style.visibility = "hidden";
+          panoSwitcherContainer.style.opacity = 0;
+          panoSwitcherActivated = false;
+      }
+      var controlItemPanoSwitcherData = {
+        style: {backgroundImage: 'url(./assets/icons/compass.png)'},
+        onTap: panoSwictherOnTap
+      };
+      var controlItemPanoSwitcher = viewer.appendControlItem(controlItemPanoSwitcherData);
+      controlItemPanoSwitcher.parentElement.appendChild(panoSwitcherContainer);
+
+      // BGM Audio Button.
+      function musicOnTap(event) {
+        var bgm = document.getElementById("bgm");
+        if (bgm.muted) {
+          bgm.muted = false;
+          bgm.play();
+          this.style.backgroundImage = 'url(./assets/icons/unmuted.png)';
+        } else {
+          bgm.muted = true;
+          bgm.pause();
+          this.style.backgroundImage = 'url(./assets/icons/muted.png)';
+        }
+      }
+      var controlItemMusicData = {
+        style: {backgroundImage: 'url(./assets/icons/muted.png)'},
+        onTap: musicOnTap
+      };
+      viewer.appendControlItem(controlItemMusicData);
+
+      // Override fullscreen buton.
+      var scope = this, isFullscreen = false, tapSkipped = true;
+      var stylesheetId = 'panolens-style-addon';
+      // Don't create button if no support
+      if (document.fullscreenEnabled || document.webkitFullscreenEnabled ||
+        document.mozFullScreenEnabled || document.msFullscreenEnabled)
+      {
+        function onTap(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          tapSkipped = false;
+          if (!isFullscreen) {
+            scope.container.requestFullscreen && scope.container.requestFullscreen();
+            scope.container.msRequestFullscreen && scope.container.msRequestFullscreen();
+            scope.container.mozRequestFullScreen && scope.container.mozRequestFullScreen();
+            scope.container.webkitRequestFullscreen && scope.container.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            isFullscreen = true;
+          } else {
+            document.exitFullscreen && document.exitFullscreen();
+            document.msExitFullscreen && document.msExitFullscreen();
+            document.mozCancelFullScreen && document.mozCancelFullScreen();
+            document.webkitExitFullscreen && document.webkitExitFullscreen();
+            isFullscreen = false;
+          }
+          this.style.backgroundImage = (isFullscreen) 
+            ? 'url("' + PANOLENS.DataImage.FullscreenLeave + '")' 
+            : 'url("' + PANOLENS.DataImage.FullscreenEnter + '")';
+        }
+
+        function onFullScreenChange(e) {
+          if (tapSkipped) {
+            isFullscreen = !isFullscreen; 
+            controlItemFullscreen.style.backgroundImage = ( isFullscreen ) 
+              ? 'url("' + PANOLENS.DataImage.FullscreenLeave + '")' 
+              : 'url("' + PANOLENS.DataImage.FullscreenEnter + '")';
+          }
+          // scope.dispatchEvent( { type: 'panolens-viewer-handler', method: 'onWindowResize', data: false } );
+          tapSkipped = true;
+        }
+
+        document.addEventListener('fullscreenchange', onFullScreenChange, false);
+        document.addEventListener( 'webkitfullscreenchange', onFullScreenChange, false );
+        document.addEventListener( 'mozfullscreenchange', onFullScreenChange, false );
+        document.addEventListener( 'MSFullscreenChange', onFullScreenChange, false );
+
+        var controlItemFullscreenData = {
+          style: {backgroundImage: 'url("' + PANOLENS.DataImage.FullscreenEnter + '")' },
+          onTap: onTap
+        };
+        // Add fullscreen stlye if not exists
+        if ( !document.querySelector( stylesheetId ) ) {
+          var sheet = document.createElement( 'style' );
+          sheet.id = stylesheetId;
+          sheet.innerHTML = ':-webkit-full-screen { width: 100% !important; height: 100% !important }';
+          document.body.appendChild( sheet );
+        }
+        var controlItemFullscreen = viewer.appendControlItem(controlItemFullscreenData);
+      }
+    </script>
+  </body>
+</html>
