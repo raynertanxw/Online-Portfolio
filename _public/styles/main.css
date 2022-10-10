@@ -369,6 +369,11 @@ div.downloadIcons
     display: inline;
     float: none;
   }
+  
+  .container-sm ul li
+  {
+    text-align: left;
+  }
 
   .container-sm
   {
