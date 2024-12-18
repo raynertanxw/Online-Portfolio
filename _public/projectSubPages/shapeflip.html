@@ -5,82 +5,115 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
 
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link
+      rel="stylesheet"
+      href="../styles/font-awesome-4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../styles/main.css" />
 
     <style>
-      img.app-icon, img.screenshot-portrait
-      {
+      img.app-icon,
+      img.screenshot-portrait {
         border-style: solid;
         border-color: #171b41;
         border-width: 1px;
       }
     </style>
 
-    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:700"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
   <body>
+    <div class="content-wrapper">
+      <div class="header">
+        <div class="container">
+          <span class="navtext">RAYNER TAN</span>
 
-  <div class="content-wrapper">
-    <div class="header">
-      <div class="container">
-        <span class="navtext">RAYNER TAN</span>
-
-        <ul class="navitems navtext">
-          <li><a href="../works.html" id="highlighted">WORK</a></li>
-          <li><a href="../about.html">ABOUT</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-    <div class="container-sm">
-
-      <span class="heading">ShapeFlip</span>
-
-      <img src="../assets/images/shapeflip.png" class="app-icon">
-
-      <br>
-
-      <p>ShapeFlip is a puzzle arcade game revolving around matching shapes. The game tests players’ geometrical manipulation skills. A main shape is shown in the top middle of the screen with two options at the bottom left and bottom right. Players have to pick the matching shape and not get tricked by the other flipped shape. Time is a constraint as there are only five seconds given to figure out the matching shape.</p>
-
-      <img src="../assets/screenshots/shapeflip_1.png" alt="" class="screenshot-portrait">
-      <br class="sm-only-break">
-      <img src="../assets/screenshots/shapeflip_2.png" alt="" class="screenshot-portrait">
-      <br class="sm-only-break">
-      <img src="../assets/screenshots/shapeflip_3.png" alt="" class="screenshot-portrait">
-      <br class="sm-only-break">
-
-      <p>You can check the game out at the iTunes App Store by clicking the download button below.</p>
-      <p><strong>EDIT: The game is no longer supported and has been retired from the App Store and Google Play Store.</strong></p>
-
-      <br>
-
-      <!-- <a href="https://itunes.apple.com/us/app/shapeflip/id970287701?mt=8" target="_blank">
-        <div class="button">
-          <span>Download</span>
+          <ul class="navitems navtext">
+            <li><a href="../works.html" id="highlighted">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+          </ul>
         </div>
-      </a> -->
+      </div>
 
-      <div id="moreProjectsButton"></div>
+      <div class="container-sm">
+        <span class="heading">ShapeFlip</span>
 
+        <img src="../assets/images/shapeflip.png" class="app-icon" />
+
+        <br />
+
+        <p>
+          ShapeFlip is a puzzle arcade game revolving around matching shapes.
+          The game tests players’ geometrical manipulation skills. A main shape
+          is shown in the top middle of the screen with two options at the
+          bottom left and bottom right. Players have to pick the matching shape
+          and not get tricked by the other flipped shape. Time is a constraint
+          as there are only five seconds given to figure out the matching shape.
+        </p>
+
+        <img
+          src="../assets/screenshots/shapeflip_1.png"
+          alt=""
+          class="screenshot-portrait"
+        />
+        <br class="sm-only-break" />
+        <img
+          src="../assets/screenshots/shapeflip_2.png"
+          alt=""
+          class="screenshot-portrait"
+        />
+        <br class="sm-only-break" />
+        <img
+          src="../assets/screenshots/shapeflip_3.png"
+          alt=""
+          class="screenshot-portrait"
+        />
+        <br class="sm-only-break" />
+
+        <div class="downloadIcons">
+          <a
+            href="https://apps.apple.com/us/app/shapeflip/id970287701"
+            class="downloadIcon"
+            target="_blank"
+          >
+            <i class="fa fa-apple fa-3x fa-border"></i>
+          </a>
+
+          <!--<a
+            href="https://play.google.com/store/apps/details?id=com.tanxuewenrayner.DontSpam"
+            class="downloadIcon"
+            target="_blank"
+          >
+            <i class="fa fa-android fa-3x fa-border"></i>
+          </a> -->
+        </div>
+
+        <br />
+        <br />
+
+        <div id="moreProjectsButton"></div>
+      </div>
+
+      <div class="footer"></div>
     </div>
-
-    <div class="footer"></div>
-
-  </div>
   </body>
 
   <!--JQuery-->
   <script type="text/javascript" src="../scripts/jquery.min.js"></script>
   <script>
-      $("#moreProjectsButton").load("COMMON_moreProjectsButton.html");
+    $("#moreProjectsButton").load("COMMON_moreProjectsButton.html");
   </script>
 
   <!--Custom JS-->
   <script type="text/javascript" src="../scripts/main.js"></script>
-
 </html>
