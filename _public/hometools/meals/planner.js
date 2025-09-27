@@ -37,6 +37,11 @@ function generateMealTable() {
                     const div = event.currentTarget;
                     div.classList.toggle('meal-on');
                 });
+
+                // TODO: For timing, just have a drop down of common times, lunch 10:00, 10:30, 11:00, or ANY
+                // IF the button is "meals-on" then it will show the dropdown. Else hide with display: none;
+                // Then logic wise, dropdown defaults to "any" when first activated (include reactivates)
+                // Then when it's NOT any, then we append the timing in the text. Then that's how to add with time.
                 td.appendChild(div);
             }
 
@@ -79,6 +84,7 @@ function summariseMeals() {
     let mealSummary = document.getElementById("meal-summary");
     mealSummary.innerText = "";
     let mealParaSummary = document.createElement("p");
+    mealParaSummary.id = "copy-target";
     var summaryString = "Meals for the week:\n";
     for (curDay of days) {
         summaryString += curDay + ": ";
@@ -108,7 +114,17 @@ function summariseMeals() {
     mealParaSummary.innerText = summaryString;
     mealSummary.appendChild(mealParaSummary);
 
-    // TODO: Copy para text button;
+    // NOTE: Copy para text button;
+    let copyButton = document.createElement("button");
+    copyButton.innerText = "Copy to Clipboard";
+    copyButton.addEventListener("click", function(event) {
+        var copyText = document.getElementById("copy-target").innerText;
+        console.log(copyText);
+        navigator.clipboard.writeText(copyText);
+        alert("Copied the text: \n" + copyText);
+    })
+    copyButton.id = "copy-button";
+    mealSummary.appendChild(copyButton);
 }
 
 generateMealTable();

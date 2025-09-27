@@ -51,6 +51,7 @@ th {
     background-color: rgb(101, 164, 101);
 }
 
+button#copy-button,
 button#summarise-meals {
     display: flex;
     margin: 16px auto;
