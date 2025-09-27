@@ -1,0 +1,65 @@
+#container {
+    padding: 16px;
+}
+
+table,
+td,
+th {
+    border: 2px solid;
+}
+
+td,
+th {
+    padding: 8px;
+}
+
+#meals-section {
+    text-align: center;
+}
+
+#meals-section>table {
+    margin: auto;
+}
+
+#meal-table {
+    border-collapse: collapse;
+}
+
+.person-meal {
+    display: inline-flex;
+    padding: 5px;
+    min-width: 48px;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+
+    background-color: pink;
+}
+
+.lunch {
+    font-family: cursive;
+    color: darkred;
+}
+
+.dinner {
+    font-family: cursive;
+    color: darkblue;
+}
+
+.meal-on {
+    background-color: palegreen;
+}
+
+button#summarise-meals {
+    display: flex;
+    margin: 16px auto;
+    font-size: 2em;
+    padding: 16px 24px;
+    border-radius: 8px;
+}
+
+
+div#meal-summary > p {
+    text-align: center;
+}
