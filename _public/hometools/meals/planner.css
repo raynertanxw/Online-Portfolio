@@ -34,21 +34,21 @@ th {
     justify-content: center;
     margin: 5px;
 
-    background-color: pink;
+    background-color: rgb(255, 192, 192);
 }
 
 .lunch {
-    font-family: cursive;
-    color: darkred;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(121, 51, 51);
 }
 
 .dinner {
-    font-family: cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: darkblue;
 }
 
 .meal-on {
-    background-color: palegreen;
+    background-color: rgb(101, 164, 101);
 }
 
 button#summarise-meals {
@@ -57,9 +57,15 @@ button#summarise-meals {
     font-size: 2em;
     padding: 16px 24px;
     border-radius: 8px;
+    font-family: cursive;
 }
 
 
 div#meal-summary > p {
     text-align: center;
+    font-family: fantasy;
+}
+
+th {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
