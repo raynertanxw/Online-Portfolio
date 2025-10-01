@@ -2,6 +2,10 @@
     padding: 16px;
 }
 
+html {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
 table,
 td,
 th {
@@ -26,24 +30,30 @@ th {
 }
 
 .person-meal {
+    display: inline-block;
+}
+.person-meal:first-child {
+    margin-right: 8px;
+}
+
+.person-meal-toggle {
     display: inline-flex;
     padding: 5px;
     min-width: 48px;
-    min-height: 48px;
+    min-height: 32px;
     align-items: center;
+    text-align: center;
     justify-content: center;
-    margin: 5px;
+    font-weight: bold;
 
     background-color: rgb(255, 192, 192);
 }
 
 .lunch {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(121, 51, 51);
 }
 
 .dinner {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: darkblue;
 }
 
@@ -65,8 +75,4 @@ button#summarise-meals {
 div#meal-summary > p {
     text-align: center;
     font-family: fantasy;
-}
-
-th {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

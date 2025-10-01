@@ -1,6 +1,7 @@
 const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const meals = ["lunch", "dinner"];
 const people = ["S", "R"];
+const timeOptions = ["any", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30"];
 
 function generateMealTable() {
     const table = document.getElementById("meal-table");
@@ -26,23 +27,43 @@ function generateMealTable() {
         for (curMeal of meals) {
             var td = document.createElement("td");
             td.classList.add(curMeal);
+            td.classList.add("meal-cell");
 
             for (person of people) {
-                let div = document.createElement("div");
-                div.innerText = person;
-                div.classList.add(curMeal);
-                div.classList.add(person);
-                div.classList.add("person-meal");
-                div.addEventListener("click", function (event) {
+                let personMeal = document.createElement("div");
+                personMeal.className = "person-meal";
+
+                let personMealToggle = document.createElement("div");
+                personMealToggle.innerText = person;
+                personMealToggle.classList.add(curMeal);
+                personMealToggle.classList.add(person);
+                personMealToggle.classList.add("person-meal-toggle");
+                personMealToggle.addEventListener("click", function (event) {
                     const div = event.currentTarget;
                     div.classList.toggle('meal-on');
-                });
 
-                // TODO: For timing, just have a drop down of common times, lunch 10:00, 10:30, 11:00, or ANY
-                // IF the button is "meals-on" then it will show the dropdown. Else hide with display: none;
-                // Then logic wise, dropdown defaults to "any" when first activated (include reactivates)
-                // Then when it's NOT any, then we append the timing in the text. Then that's how to add with time.
-                td.appendChild(div);
+                    // const timeDropdownEle = div.parentNode.querySelector('option');
+                    const timeDropdownEle = div.nextElementSibling;
+                    timeDropdownEle.disabled = !div.classList.contains('meal-on');
+                });
+                personMeal.appendChild(personMealToggle);
+
+                let timeDropdown = document.createElement("select");
+                timeDropdown.setAttribute("name", "time");
+                for (timeOption of timeOptions) {
+                    let optionEle = document.createElement("option");
+                    optionEle.value = timeOption;
+                    optionEle.innerText = timeOption;
+                    if (timeOption == timeOptions[0]) {
+                        optionEle.selected = true;
+                    }
+                    timeDropdown.style.display = "block";
+                    timeDropdown.disabled = true;
+                    timeDropdown.appendChild(optionEle);
+                }
+                personMeal.appendChild(timeDropdown);
+
+                td.appendChild(personMeal);
             }
 
             dayRow.appendChild(td);
@@ -117,7 +138,7 @@ function summariseMeals() {
     // NOTE: Copy para text button;
     let copyButton = document.createElement("button");
     copyButton.innerText = "Copy to Clipboard";
-    copyButton.addEventListener("click", function(event) {
+    copyButton.addEventListener("click", function (event) {
         var copyText = document.getElementById("copy-target").innerText;
         console.log(copyText);
         navigator.clipboard.writeText(copyText);
