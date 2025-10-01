@@ -61,7 +61,9 @@ function generateMealTable() {
                     timeDropdown.disabled = true;
                     timeDropdown.appendChild(optionEle);
                 }
-                personMeal.appendChild(timeDropdown);
+                if (curMeal == "lunch") { // Only lunch have timings
+                    personMeal.appendChild(timeDropdown);
+                }
 
                 td.appendChild(personMeal);
             }
@@ -95,7 +97,8 @@ function summariseMeals() {
                 // console.log(personDiv);
                 if (personDiv.classList.contains("meal-on")) {
                     // console.log(person + " has " + curDay + " " + curMeal);
-                    mealSchedule[curDay][curMeal].push(person);
+                    const timeslot = curMeal == "lunch" ? personDiv.nextElementSibling.value : timeOptions[0];
+                    mealSchedule[curDay][curMeal].push({ person: person, timeslot: timeslot });
                 }
             }
         }
@@ -117,12 +120,16 @@ function summariseMeals() {
             if (mealArr.length == 0) {
                 summaryString += " S&R❌ ";
             } else if (mealArr.length == 2) {
-                summaryString += " S&R✅ ";
+                const timeslot_S = mealArr[0].timeslot;
+                const timeslot_R = mealArr[1].timeslot;
+                summaryString += ` S${timeslot_S == timeOptions[0] ? "" : "(" + timeslot_S + ")"}&R${timeslot_R == timeOptions[0] ? "" : "(" + timeslot_R + ")"}✅ `;
             } else if (mealArr.length == 1) {
-                if (mealArr[0] == "R") {
-                    summaryString += " S❌R✅ ";
-                } else if (mealArr[0] == "S") {
-                    summaryString += " S✅R❌ ";
+                if (mealArr[0].person == "R") {
+                    const timeslot = mealArr[0].timeslot;
+                    summaryString += ` S❌R${timeslot == timeOptions[0] ? "" : "(" + timeslot + ")"}✅ `;
+                } else if (mealArr[0].person == "S") {
+                    const timeslot = mealArr[0].timeslot;
+                    summaryString += ` S${timeslot == timeOptions[0] ? "" : "(" + timeslot + ")"}✅R❌ `;
                 } else {
                     console.log("ERROR CASE UNKNOWN FIRST ITEM IN MEAL ARR: " + curDay + ", " + curMeal + ", " + mealArr);
                 }
