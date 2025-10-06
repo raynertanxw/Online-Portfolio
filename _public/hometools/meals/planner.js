@@ -1,7 +1,9 @@
 const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const meals = ["lunch", "dinner"];
 const people = ["S", "R"];
-const timeOptions = ["any", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30"];
+const ANY_TIME = "any";
+const lunchTimeOptions = [ANY_TIME, "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30"];
+const dinnerTimeOptions = [ANY_TIME, "4pm", "4:15pm", "4:30pm", "4:45pm", "5pm", "5:15pm", "5:30pm", "5:45pm", "6pm"];
 
 function generateMealTable() {
     const table = document.getElementById("meal-table");
@@ -50,20 +52,19 @@ function generateMealTable() {
 
                 let timeDropdown = document.createElement("select");
                 timeDropdown.setAttribute("name", "time");
-                for (timeOption of timeOptions) {
+                let mealTimeOptions = (curMeal == "lunch") ? lunchTimeOptions : dinnerTimeOptions;
+                for (timeOption of mealTimeOptions) {
                     let optionEle = document.createElement("option");
                     optionEle.value = timeOption;
                     optionEle.innerText = timeOption;
-                    if (timeOption == timeOptions[0]) {
+                    if (timeOption == ANY_TIME) {
                         optionEle.selected = true;
                     }
                     timeDropdown.style.display = "block";
                     timeDropdown.disabled = true;
                     timeDropdown.appendChild(optionEle);
                 }
-                if (curMeal == "lunch") { // Only lunch have timings
-                    personMeal.appendChild(timeDropdown);
-                }
+                personMeal.appendChild(timeDropdown);
 
                 td.appendChild(personMeal);
             }
@@ -97,7 +98,7 @@ function summariseMeals() {
                 // console.log(personDiv);
                 if (personDiv.classList.contains("meal-on")) {
                     // console.log(person + " has " + curDay + " " + curMeal);
-                    const timeslot = curMeal == "lunch" ? personDiv.nextElementSibling.value : timeOptions[0];
+                    const timeslot = personDiv.nextElementSibling.value;
                     mealSchedule[curDay][curMeal].push({ person: person, timeslot: timeslot });
                 }
             }
@@ -122,14 +123,14 @@ function summariseMeals() {
             } else if (mealArr.length == 2) {
                 const timeslot_S = mealArr[0].timeslot;
                 const timeslot_R = mealArr[1].timeslot;
-                summaryString += ` S${timeslot_S == timeOptions[0] ? "" : "(" + timeslot_S + ")"}&R${timeslot_R == timeOptions[0] ? "" : "(" + timeslot_R + ")"}✅ `;
+                summaryString += ` S${timeslot_S == ANY_TIME ? "" : "(" + timeslot_S + ")"}&R${timeslot_R == ANY_TIME ? "" : "(" + timeslot_R + ")"}✅ `;
             } else if (mealArr.length == 1) {
                 if (mealArr[0].person == "R") {
                     const timeslot = mealArr[0].timeslot;
-                    summaryString += ` S❌R${timeslot == timeOptions[0] ? "" : "(" + timeslot + ")"}✅ `;
+                    summaryString += ` S❌R${timeslot == ANY_TIME ? "" : "(" + timeslot + ")"}✅ `;
                 } else if (mealArr[0].person == "S") {
                     const timeslot = mealArr[0].timeslot;
-                    summaryString += ` S${timeslot == timeOptions[0] ? "" : "(" + timeslot + ")"}✅R❌ `;
+                    summaryString += ` S${timeslot == ANY_TIME ? "" : "(" + timeslot + ")"}✅R❌ `;
                 } else {
                     console.log("ERROR CASE UNKNOWN FIRST ITEM IN MEAL ARR: " + curDay + ", " + curMeal + ", " + mealArr);
                 }
